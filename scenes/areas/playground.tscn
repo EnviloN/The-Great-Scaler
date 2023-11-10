@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://1j0p81g0typc"]
+
+[ext_resource type="PackedScene" uid="uid://4w3bgp6o6ji0" path="res://scenes/objects/weights/weight_5u.tscn" id="1_kaiua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7skf"]
+size = Vector2(1433.5, 57)
+
+[node name="Playground" type="Node2D"]
+
+[node name="Floor" type="RigidBody2D" parent="."]
+position = Vector2(600, 600)
+lock_rotation = true
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0.75, -0.5)
+shape = SubResource("RectangleShape2D_c7skf")
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = -709.0
+offset_top = -29.0
+offset_right = 721.0
+offset_bottom = 31.0
+
+[node name="Weight 5u" parent="." instance=ExtResource("1_kaiua")]
+position = Vector2(563, 540)
+
+[node name="Weight 5u2" parent="." instance=ExtResource("1_kaiua")]
+position = Vector2(591, 417)

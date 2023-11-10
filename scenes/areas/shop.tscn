@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://dq0j43qqh455h"]
+
+[ext_resource type="Texture2D" uid="uid://ddq4w4jm0rwiv" path="res://sprites/concept/bg.png" id="1_t73cx"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_upsel"]
+[ext_resource type="Texture2D" uid="uid://bkqqxt7j6dsb7" path="res://sprites/concept/scaler/scaler.png" id="3_7nquv"]
+[ext_resource type="PackedScene" uid="uid://c5v3eihw5ndem" path="res://scenes/objects/table.tscn" id="3_omivf"]
+[ext_resource type="PackedScene" uid="uid://ciw7medod33ku" path="res://scenes/objects/scale.tscn" id="4_18fl8"]
+[ext_resource type="PackedScene" uid="uid://4w3bgp6o6ji0" path="res://scenes/objects/weights/weight_5u.tscn" id="5_bl1wr"]
+[ext_resource type="PackedScene" uid="uid://cwmgr80m1xcsn" path="res://scenes/objects/weights/weight_1u.tscn" id="5_sxeeo"]
+[ext_resource type="PackedScene" uid="uid://b27netc15bslr" path="res://scenes/objects/weights/weight_2u.tscn" id="6_43fqr"]
+[ext_resource type="PackedScene" uid="uid://g284r4g8dtey" path="res://scenes/objects/weights/weight_10u.tscn" id="6_jr0if"]
+[ext_resource type="PackedScene" uid="uid://blsct0gdsgvyd" path="res://scenes/scaler/hand.tscn" id="9_htnur"]
+
+[node name="Shop" type="Node2D"]
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Game Manager" type="Node" parent="."]
+script = ExtResource("1_upsel")
+
+[node name="Shop Background" type="Sprite2D" parent="."]
+position = Vector2(544, 265)
+scale = Vector2(0.666, 0.666)
+texture = ExtResource("1_t73cx")
+
+[node name="Scaler" type="Sprite2D" parent="."]
+position = Vector2(693, 363)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("3_7nquv")
+
+[node name="Table" parent="." instance=ExtResource("3_omivf")]
+position = Vector2(640, 939)
+
+[node name="Hand" parent="." instance=ExtResource("9_htnur")]
+position = Vector2(639, 361)
+scale = Vector2(0.667, 0.667)
+
+[node name="Camera2D" type="Camera2D" parent="Hand"]
+zoom = Vector2(0.9, 0.9)
+limit_left = -180
+limit_top = -180
+limit_right = 1460
+limit_bottom = 900
+
+[node name="Weight Container" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Weight 5u2" parent="Weight Container" instance=ExtResource("5_bl1wr")]
+position = Vector2(1327, 682)
+
+[node name="Weight 10u" parent="Weight Container" instance=ExtResource("6_jr0if")]
+position = Vector2(1149, 658)
+
+[node name="Weight 1u" parent="Weight Container" instance=ExtResource("5_sxeeo")]
+position = Vector2(1243, 737)
+
+[node name="Weight 1u2" parent="Weight Container" instance=ExtResource("5_sxeeo")]
+position = Vector2(925, 552)
+
+[node name="Weight 2u" parent="Weight Container" instance=ExtResource("6_43fqr")]
+position = Vector2(355, 524)
+
+[node name="Scale" parent="." instance=ExtResource("4_18fl8")]
+position = Vector2(640, 800)
+stiffness = 1.0
+damping = 0.5
+length = 20.0
+rest_length = 0.0
