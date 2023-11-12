@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b27netc15bslr"]
+
+[ext_resource type="Texture2D" uid="uid://ohab282wb5ke" path="res://sprites/concept/weights/2u.png" id="1_ahff5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0hiy"]
+size = Vector2(58, 69)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbxur"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hepo4"]
+radius = 12.0
+
+[node name="Weight 2u" type="RigidBody2D"]
+z_index = 24
+z_as_relative = false
+collision_layer = 2
+collision_mask = 5
+mass = 0.2
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 33.691)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_ahff5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 47.191)
+shape = SubResource("RectangleShape2D_o0hiy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bbxur")
+
+[node name="Grab Area" type="Area2D" parent="."]
+position = Vector2(0, 81.691)
+collision_layer = 256
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grab Area"]
+position = Vector2(0, -82)
+shape = SubResource("CircleShape2D_hepo4")
