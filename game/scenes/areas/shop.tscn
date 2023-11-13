@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq0j43qqh455h"]
+[gd_scene load_steps=13 format=3 uid="uid://dq0j43qqh455h"]
 
 [ext_resource type="Texture2D" uid="uid://ddq4w4jm0rwiv" path="res://sprites/concept/bg.png" id="1_t73cx"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_upsel"]
 [ext_resource type="Script" path="res://scenes/camera.gd" id="2_fixa2"]
 [ext_resource type="Texture2D" uid="uid://bkqqxt7j6dsb7" path="res://sprites/concept/scaler/scaler.png" id="3_7nquv"]
 [ext_resource type="PackedScene" uid="uid://c5v3eihw5ndem" path="res://scenes/objects/table.tscn" id="3_omivf"]
-[ext_resource type="PackedScene" uid="uid://ciw7medod33ku" path="res://scenes/objects/scale.tscn" id="4_18fl8"]
+[ext_resource type="PackedScene" uid="uid://0dnygrdtfkbn" path="res://scenes/objects/scale.tscn" id="4_18fl8"]
+[ext_resource type="PackedScene" uid="uid://c83vvqktetfho" path="res://scenes/customers/customers.tscn" id="4_fha1v"]
 [ext_resource type="PackedScene" uid="uid://4w3bgp6o6ji0" path="res://scenes/objects/weights/weight_5u.tscn" id="5_bl1wr"]
 [ext_resource type="PackedScene" uid="uid://cwmgr80m1xcsn" path="res://scenes/objects/weights/weight_1u.tscn" id="5_sxeeo"]
 [ext_resource type="PackedScene" uid="uid://b27netc15bslr" path="res://scenes/objects/weights/weight_2u.tscn" id="6_43fqr"]
@@ -41,9 +42,16 @@ scale = Vector2(0.666, 0.666)
 texture = ExtResource("1_t73cx")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+
+[node name="Customers" parent="Background Layer/ParallaxBackground/ParallaxLayer2" instance=ExtResource("4_fha1v")]
+unique_name_in_owner = true
+position = Vector2(17, 604)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
 motion_scale = Vector2(0.8, 0.8)
 
-[node name="Scaler" type="Sprite2D" parent="Background Layer/ParallaxBackground/ParallaxLayer2"]
+[node name="Scaler" type="Sprite2D" parent="Background Layer/ParallaxBackground/ParallaxLayer3"]
 position = Vector2(693, 363)
 scale = Vector2(0.667, 0.667)
 texture = ExtResource("3_7nquv")
@@ -75,7 +83,7 @@ position = Vector2(355, 524)
 
 [node name="Scale" parent="." instance=ExtResource("4_18fl8")]
 position = Vector2(640, 800)
-stiffness = 1.0
-damping = 0.5
-length = 20.0
+stiffness = 5.0
+damping = 0.08
+length = 5.0
 rest_length = 0.0

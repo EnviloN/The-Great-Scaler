@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciw7medod33ku"]
+[gd_scene load_steps=7 format=3 uid="uid://0dnygrdtfkbn"]
 
-[ext_resource type="Texture2D" uid="uid://b540egd2cfwrc" path="res://sprites/concept/scale/scale_base.png" id="1_adqod"]
+[ext_resource type="Texture2D" uid="uid://c2vvk6p8ca3y3" path="res://sprites/concept/scale/scale_base.png" id="1_adqod"]
 [ext_resource type="Script" path="res://scenes/objects/scale.gd" id="1_g4r0b"]
 [ext_resource type="Texture2D" uid="uid://besinen640w5e" path="res://sprites/concept/scale/scale_beam.png" id="2_73rvw"]
 [ext_resource type="Script" path="res://scenes/objects/pan.gd" id="3_k8f2h"]
@@ -19,7 +19,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Base"]
-position = Vector2(-3, -235)
+position = Vector2(2, -235)
 scale = Vector2(0.666, 0.666)
 texture = ExtResource("1_adqod")
 
@@ -47,7 +47,7 @@ node_b = NodePath("Left Pan")
 [node name="Left Pan" type="RigidBody2D" parent="Base/Beam Joint/Beam/Left Pan Joint"]
 collision_layer = 4
 collision_mask = 3
-mass = 0.2
+mass = 0.1
 lock_rotation = true
 script = ExtResource("3_k8f2h")
 
@@ -68,7 +68,7 @@ node_b = NodePath("Right Pan")
 [node name="Right Pan" type="RigidBody2D" parent="Base/Beam Joint/Beam/Right Pan Joint"]
 collision_layer = 4
 collision_mask = 3
-mass = 0.2
+mass = 0.1
 lock_rotation = true
 script = ExtResource("3_k8f2h")
 
