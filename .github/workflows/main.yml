@@ -1,65 +1,47 @@
-name: itch.io upload
+name: Build Godot Project
 
-# define what triggers the action
-on: push
-
-# the directory where your game is
-env:
-  WORKING_DIR: game
-  EXPORT_DIR: build/web
-  GODOT_VERSION: '4.1.3'
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: {}
 
 jobs:
-  deploy:
-    # only run action, if pushed on master branch
-    if: github.ref == 'refs/heads/master'
+  export_web:
+    name: Export
     runs-on: ubuntu-latest
+
     steps:
-      - name: Create export directory
-        run: mkdir -p ./${EXPORT_DIR}
-        
-      - name: Checkout source code
-        uses: actions/checkout@v3
-        
-      - name: Cache Godot files
-        id: cache-godot
-        uses: actions/cache@v3
+      - uses: actions/checkout@v4
         with:
-          path: |
-            ~/.local/share/godot/**
-            /usr/local/bin/godot
-            ~/.config/godot/**
-          key: ${{ runner.os }}-godot-${GODOT_VERSION}
-        
-      - name: Setup Headless Godot
-        if: steps.cache-godot.outputs.cache-hit != 'true'
-        shell: bash
-        run: |
-          wget -q https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
-          wget -q https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
-          mkdir ~/.cache
-          mkdir -p ~/.config/godot
-          mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-          unzip Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip
-          mv Godot_v${GODOT_VERSION}-stable_linux.x86_64 /usr/local/bin/godot
-          unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz
-          mv templates/* ~/.local/share/godot/templates/${GODOT_VERSION}.stable
-          rm -f Godot_v${GODOT_VERSION}-stable_linux.x86_64.zip Godot_v${GODOT_VERSION}-stable_export_templates.tpz
-          godot --version
+          lfs: true
 
-      - name: Export Web
-        shell: bash
-        run: |
-          godot --headless --path ${WORKING_DIRECTORY} --export-release Web ./${EXPORT_DIR}/index.html
-          ls -al ./${EXPORT_DIR}
+      - name: Godot Export
+        id: export
+        uses: firebelley/godot-export@v5.2.0
+        with:
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.1.3/Godot_v4.1.3-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1.3/Godot_v4.1.3-stable_export_templates.tpz
+          relative_project_path: ./game/
+          cache: true
+          archive_output: true
+          use_preset_export_path: true
+          export_debug: false
 
-      # uploads to itch.io
-      # more info here https://github.com/dulvui/itchio-butler-upload
-      # - name: Upload to itch.io
-      #   uses: dulvui/itchio-butler-upload@v0.0.1
-      #   with:
-      #     working-directory: build/web
-      #     api-key: ${{ secrets.BUTLER_API_KEY }}
-      #     user: ${{ secrets.ITCHIO_USERNAME }}
-      #     game: ${{ secrets.ITCHIO_GAME }}
-      #     channel: html5
+      - name: Upload web build to itch
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
+          gameData: ./build/web/web.zip
+          itchUsername: ${{ secrets.ITCHIO_USERNAME }}
+          itchGameId: ${{ secrets.ITCHIO_GAME }}
+          buildChannel: html5
+
+      - name: Upload windows build to itch
+        uses: KikimoraGames/itch-publish@v0.0.3
+        with:
+          butlerApiKey: ${{ secrets.BUTLER_API_KEY }}
+          gameData: ./build//win/win.zip
+          itchUsername: ${{ secrets.ITCHIO_USERNAME }}
+          itchGameId: ${{ secrets.ITCHIO_GAME }}
+          buildChannel: windows
