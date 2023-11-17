@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b27netc15bslr"]
 
-[ext_resource type="Texture2D" uid="uid://ohab282wb5ke" path="res://sprites/concept/weights/2u.png" id="1_ahff5"]
+[ext_resource type="Texture2D" uid="uid://dv3idgxbr50iu" path="res://sprites/weights.png" id="1_khske"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0hiy"]
-size = Vector2(58, 69)
+size = Vector2(68, 84)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bbxur"]
 radius = 12.0
@@ -20,12 +20,14 @@ mass = 1.6
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 33.691)
-scale = Vector2(0.667, 0.667)
-texture = ExtResource("1_ahff5")
+position = Vector2(0, 41)
+scale = Vector2(2, 2)
+texture = ExtResource("1_khske")
+region_enabled = true
+region_rect = Rect2(41, 13, 34, 55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 47.191)
+position = Vector2(0, 54)
 shape = SubResource("RectangleShape2D_o0hiy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
