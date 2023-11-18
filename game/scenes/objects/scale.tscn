@@ -1,13 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://0dnygrdtfkbn"]
+[gd_scene load_steps=5 format=3 uid="uid://0dnygrdtfkbn"]
 
-[ext_resource type="Texture2D" uid="uid://c2vvk6p8ca3y3" path="res://sprites/concept/scale/scale_base.png" id="1_adqod"]
 [ext_resource type="Script" path="res://scenes/objects/scale.gd" id="1_g4r0b"]
-[ext_resource type="Texture2D" uid="uid://besinen640w5e" path="res://sprites/concept/scale/scale_beam.png" id="2_73rvw"]
+[ext_resource type="Texture2D" uid="uid://bmjltsub1g67k" path="res://sprites/scale_spritesheet.png" id="2_dxor8"]
 [ext_resource type="Script" path="res://scenes/objects/pan.gd" id="3_k8f2h"]
-[ext_resource type="Texture2D" uid="uid://b8vvt3w47ldbg" path="res://sprites/concept/scale/scale_pan.png" id="3_y2oks"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_307bb"]
-size = Vector2(226, 10)
+size = Vector2(88, 6)
 
 [node name="Scale" type="Node2D"]
 z_index = 50
@@ -19,16 +17,17 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="Base"]
-position = Vector2(2, -235)
-scale = Vector2(0.666, 0.666)
-texture = ExtResource("1_adqod")
+position = Vector2(0, -95)
+texture = ExtResource("2_dxor8")
+region_enabled = true
+region_rect = Rect2(6, 7, 98, 189)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base"]
 scale = Vector2(0.667, 0.667)
-polygon = PackedVector2Array(-129, -2, 129, -1, 128, -17, 115, -20, 99, -45, 23, -57, 23, -202, 24, -556, 27, -664, 0, -704, -29, -657, -23, -551, -21, -263, -21, -145, -22, -58, -100, -46, -114, -23, -129, -19)
+polygon = PackedVector2Array(-50.9745, -1.49925, 52.4738, -1.49925, 29.985, -20.9895, 4.49775, -25.4873, 8.9955, -56.9715, 8.9955, -268.366, 1.49925, -284.858, -7.49625, -268.366, -7.49625, -32.9835, -2.9985, -25.4873, -43.4783, -14.9925)
 
 [node name="Beam Joint" type="PinJoint2D" parent="Base"]
-position = Vector2(0, -421)
+position = Vector2(0, -171)
 node_a = NodePath("..")
 node_b = NodePath("Beam")
 
@@ -40,7 +39,7 @@ center_of_mass_mode = 1
 can_sleep = false
 
 [node name="Left Pan Joint" type="PinJoint2D" parent="Base/Beam Joint/Beam"]
-position = Vector2(-280, 2)
+position = Vector2(-113, 2)
 node_a = NodePath("..")
 node_b = NodePath("Left Pan")
 
@@ -51,17 +50,18 @@ mass = 0.1
 lock_rotation = true
 script = ExtResource("3_k8f2h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Base/Beam Joint/Beam/Left Pan Joint/Left Pan"]
-position = Vector2(0, 119)
-scale = Vector2(0.667, 0.667)
-texture = ExtResource("3_y2oks")
+[node name="Sprite2D2" type="Sprite2D" parent="Base/Beam Joint/Beam/Left Pan Joint/Left Pan"]
+position = Vector2(0, 50)
+texture = ExtResource("2_dxor8")
+region_enabled = true
+region_rect = Rect2(137, 103, 93, 102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Beam Joint/Beam/Left Pan Joint/Left Pan"]
-position = Vector2(0, 239)
+position = Vector2(0, 98)
 shape = SubResource("RectangleShape2D_307bb")
 
 [node name="Right Pan Joint" type="PinJoint2D" parent="Base/Beam Joint/Beam"]
-position = Vector2(282, 5)
+position = Vector2(113, 2)
 node_a = NodePath("..")
 node_b = NodePath("Right Pan")
 
@@ -72,24 +72,25 @@ mass = 0.1
 lock_rotation = true
 script = ExtResource("3_k8f2h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Base/Beam Joint/Beam/Right Pan Joint/Right Pan"]
-position = Vector2(0, 120)
-scale = Vector2(0.667, 0.667)
-texture = ExtResource("3_y2oks")
+[node name="Sprite2D2" type="Sprite2D" parent="Base/Beam Joint/Beam/Right Pan Joint/Right Pan"]
+position = Vector2(0, 50)
+texture = ExtResource("2_dxor8")
+region_enabled = true
+region_rect = Rect2(137, 103, 93, 102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Beam Joint/Beam/Right Pan Joint/Right Pan"]
-position = Vector2(0, 239)
+position = Vector2(0, 98)
 shape = SubResource("RectangleShape2D_307bb")
 
 [node name="Sprite2D" type="Sprite2D" parent="Base/Beam Joint/Beam"]
-position = Vector2(3, 72)
-scale = Vector2(0.667, 0.667)
-texture = ExtResource("2_73rvw")
+position = Vector2(0, 29)
+texture = ExtResource("2_dxor8")
+region_enabled = true
+region_rect = Rect2(127, 15, 234, 72)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base/Beam Joint/Beam"]
-position = Vector2(-1, -4)
 scale = Vector2(0.667, 0.667)
-polygon = PackedVector2Array(-425, 1, -181, 27, -64, -19, 80, -18, 184, 28, 431, 7, 436, 18, 190, 59, 67, 31, -63, 30, -174, 60, -426, 13)
+polygon = PackedVector2Array(-31.4843, -10.4948, 31.4843, -10.4948, 71.964, 7.49626, 173.913, -1.49924, 173.913, 5.99701, 70.4648, 20.9895, 25.4873, 8.99551, -25.4873, 8.99551, -70.4648, 20.9895, -175.412, 4.49776, -173.913, -1.49924, -71.964, 7.49626)
 
 [node name="DampedSpringJoint Left" type="DampedSpringJoint2D" parent="Base"]
 node_a = NodePath("..")

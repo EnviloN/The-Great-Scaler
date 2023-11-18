@@ -21,8 +21,7 @@ metadata/_edit_vertical_guides_ = [640.0]
 script = ExtResource("1_upsel")
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(640, 360)
-scale = Vector2(0.667, 0.667)
+position = Vector2(320, 180)
 zoom = Vector2(0.9, 0.9)
 limit_left = -180
 limit_top = -180
@@ -38,8 +37,8 @@ script = ExtResource("2_fixa2")
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Shop Background" type="Sprite2D" parent="Background Layer/ParallaxBackground/ParallaxLayer"]
-position = Vector2(544, 265)
-scale = Vector2(0.666, 0.666)
+position = Vector2(320, 175)
+scale = Vector2(0.333, 0.333)
 texture = ExtResource("1_t73cx")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
@@ -47,46 +46,46 @@ motion_scale = Vector2(0.6, 0.6)
 
 [node name="Customers" parent="Background Layer/ParallaxBackground/ParallaxLayer2" instance=ExtResource("4_fha1v")]
 unique_name_in_owner = true
-position = Vector2(17, 604)
+position = Vector2(-652, 326)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="Background Layer/ParallaxBackground"]
 motion_scale = Vector2(0.8, 0.8)
 
 [node name="Scaler" type="Sprite2D" parent="Background Layer/ParallaxBackground/ParallaxLayer3"]
-position = Vector2(693, 363)
-scale = Vector2(0.667, 0.667)
+position = Vector2(314, 177)
+scale = Vector2(0.333, 0.333)
 texture = ExtResource("3_7nquv")
 
 [node name="Table" parent="." instance=ExtResource("3_omivf")]
-position = Vector2(640, 939)
+position = Vector2(320, 497)
 
 [node name="Hand" parent="." instance=ExtResource("9_htnur")]
-position = Vector2(639, 0)
-scale = Vector2(0.667, 0.667)
+position = Vector2(432, 0)
+scale = Vector2(0.333, 0.333)
 
 [node name="Weight Container" type="Node2D" parent="."]
 unique_name_in_owner = true
 
 [node name="Weight 5u2" parent="Weight Container" instance=ExtResource("5_bl1wr")]
-position = Vector2(1321, 674)
+position = Vector2(758, 300)
 
 [node name="Weight 1u" parent="Weight Container" instance=ExtResource("5_sxeeo")]
-position = Vector2(1243, 719)
+position = Vector2(802, 348)
 
 [node name="Weight 1u2" parent="Weight Container" instance=ExtResource("5_sxeeo")]
-position = Vector2(921, 536)
+position = Vector2(648, 344)
 
 [node name="Weight 2u" parent="Weight Container" instance=ExtResource("6_43fqr")]
-position = Vector2(357, 512)
+position = Vector2(74, 320)
 
 [node name="Weight _05u" parent="Weight Container" instance=ExtResource("11_5hv1l")]
-position = Vector2(1183, 732)
+position = Vector2(742, 361)
 
 [node name="Weight _025u" parent="Weight Container" instance=ExtResource("12_pa1dt")]
-position = Vector2(1137, 744)
+position = Vector2(696, 373)
 
 [node name="Scale" parent="." instance=ExtResource("4_18fl8")]
-position = Vector2(640, 800)
+position = Vector2(320, 430)
 stiffness = 5.0
 damping = 0.08
 length = 5.0

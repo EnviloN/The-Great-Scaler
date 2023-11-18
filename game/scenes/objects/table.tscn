@@ -3,12 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://odvceo2uib8e" path="res://sprites/concept/table.png" id="1_ko7y2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8k4hk"]
-size = Vector2(2674, 280)
+size = Vector2(1358, 136)
 
 [node name="Table" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.667, 0.667)
+scale = Vector2(0.333, 0.333)
 texture = ExtResource("1_ko7y2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
