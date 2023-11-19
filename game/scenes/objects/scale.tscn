@@ -59,6 +59,7 @@ texture = ExtResource("3_y2oks")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base/Beam Joint/Beam/Left Pan Joint/Left Pan"]
 position = Vector2(0, 239)
 shape = SubResource("RectangleShape2D_307bb")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Right Pan Joint" type="PinJoint2D" parent="Base/Beam Joint/Beam"]
 position = Vector2(282, 5)

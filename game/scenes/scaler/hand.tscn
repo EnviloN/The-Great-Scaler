@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blsct0gdsgvyd"]
+[gd_scene load_steps=11 format=3 uid="uid://blsct0gdsgvyd"]
 
 [ext_resource type="Script" path="res://scenes/scaler/hand.gd" id="1_bxonl"]
 [ext_resource type="Texture2D" uid="uid://drjx1666u5b66" path="res://sprites/concept/scaler/animated/hand_animated-sheet.png" id="2_3qkw1"]
@@ -22,21 +22,70 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position:y")
+tracks/1/path = NodePath("CollisionShape2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8.5, -2500)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(51, -2500)]
 }
 
 [sub_resource type="Animation" id="Animation_p2xls"]
 resource_name = "appear"
-length = 1.5
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-2500, -0.25, 0, 0.1, 88.5, -705.5, -0.25, 0, 0.0999999, 1, -712, -0.1, 5, 0.0406095, -8, -712, -0.0269213, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-2500, -0.25, 0, 0.1, 81.5, -704.5, -0.266472, -53, 0.117104, -4.5, -713, -0.0653428, 6, 0, -3, -712, -0.0431559, -3, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.7)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_active_flag"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ry3w1"]
 resource_name = "close"
@@ -52,6 +101,32 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_1jf68"]
+resource_name = "disappear"
+length = 0.7
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-712, -0.25, 0, 0.0324693, 11.5, -675.5, -0.0385371, 0, 0.25, 0, -2500, -0.0735408, 154.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.115351, 0.7)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-712, -0.25, 0, 0.0483048, 14.5, -677.5, -0.053672, -4, 0.243313, 11, -2500, -0.0527775, 117.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1145, 0.7)
 }
 
 [sub_resource type="Animation" id="Animation_osv71"]
@@ -92,6 +167,7 @@ _data = {
 "RESET": SubResource("Animation_4dqt2"),
 "appear": SubResource("Animation_p2xls"),
 "close": SubResource("Animation_ry3w1"),
+"disappear": SubResource("Animation_1jf68"),
 "grab": SubResource("Animation_osv71")
 }
 
@@ -102,12 +178,12 @@ collision_layer = 8
 script = ExtResource("1_bxonl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(49, -711)
+position = Vector2(51, -2500)
 texture = ExtResource("2_3qkw1")
 hframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, -693.5)
+position = Vector2(8.5, -2500)
 shape = SubResource("RectangleShape2D_nli3q")
 
 [node name="Grab Area" type="Area2D" parent="."]
