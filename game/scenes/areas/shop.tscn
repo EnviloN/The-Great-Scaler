@@ -1,11 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dq0j43qqh455h"]
+[gd_scene load_steps=23 format=3 uid="uid://dq0j43qqh455h"]
 
 [ext_resource type="Texture2D" uid="uid://ddq4w4jm0rwiv" path="res://sprites/concept/bg.png" id="1_t73cx"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_upsel"]
 [ext_resource type="Script" path="res://scenes/camera.gd" id="2_fixa2"]
-[ext_resource type="Texture2D" uid="uid://bkqqxt7j6dsb7" path="res://sprites/concept/scaler/scaler.png" id="3_7nquv"]
 [ext_resource type="PackedScene" uid="uid://c5v3eihw5ndem" path="res://scenes/objects/table.tscn" id="3_omivf"]
 [ext_resource type="PackedScene" uid="uid://0dnygrdtfkbn" path="res://scenes/objects/scale.tscn" id="4_18fl8"]
+[ext_resource type="PackedScene" uid="uid://cuaens8nbmlx1" path="res://scenes/scaler/scaler.tscn" id="4_d0spu"]
 [ext_resource type="PackedScene" uid="uid://c83vvqktetfho" path="res://scenes/customers/customers.tscn" id="4_fha1v"]
 [ext_resource type="PackedScene" uid="uid://4w3bgp6o6ji0" path="res://scenes/objects/weights/weight_5u.tscn" id="5_bl1wr"]
 [ext_resource type="PackedScene" uid="uid://cwmgr80m1xcsn" path="res://scenes/objects/weights/weight_1u.tscn" id="5_sxeeo"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://csiqmd7ftdji" path="res://jobs/100.tres" id="13_464t6"]
 [ext_resource type="Resource" uid="uid://u0811pb57avd" path="res://jobs/200.tres" id="14_csltc"]
 [ext_resource type="Script" path="res://jobs/job_manager.gd" id="14_xrg8f"]
+[ext_resource type="PackedScene" uid="uid://ckdykkc2oks8d" path="res://scenes/ui/dialogue_player.tscn" id="17_5me6j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q53ja"]
 size = Vector2(600, 1600)
@@ -26,46 +27,34 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3/Scaler:scale")
+tracks/0/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(0.6, 0.6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
+tracks/1/path = NodePath("Workspace:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.6, 0.6)]
+"values": [Color(0.117647, 0.117647, 0.117647, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Workspace:modulate")
+tracks/2/path = NodePath("Game Manager/Camera:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.117647, 0.117647, 0.117647, 1)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Game Manager/Camera:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -106,38 +95,40 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3/Scaler:scale")
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0.7, 1.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.667, 0.667), Vector2(0, 0)]
+"values": [Vector2(0.8, 0.8), Vector2(0.6, 0.6)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
+tracks/3/path = NodePath("Workspace:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0.7, 1.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.8, 0.8), Vector2(0.6, 0.6)]
+"values": [Color(1, 1, 1, 1), Color(0.117647, 0.117647, 0.117647, 1)]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Workspace:modulate")
+tracks/4/path = NodePath("ParallaxBackground/ParallaxLayer3/Scaler")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.7, 1.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.117647, 0.117647, 0.117647, 1)]
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"sit"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_ru5qg"]
@@ -177,38 +168,40 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3/Scaler:scale")
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0.667, 0.667)]
+"values": [Vector2(0.6, 0.6), Vector2(0.8, 0.8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ParallaxBackground/ParallaxLayer3:motion_scale")
+tracks/3/path = NodePath("Workspace:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0.6, 0.6), Vector2(0.8, 0.8)]
+"values": [Color(0.117647, 0.117647, 0.117647, 1), Color(1, 1, 1, 1)]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Workspace:modulate")
+tracks/4/path = NodePath("ParallaxBackground/ParallaxLayer3/Scaler")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.117647, 0.117647, 0.117647, 1), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"stand"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ihorw"]
@@ -240,13 +233,15 @@ motion_scale = Vector2(0.6, 0.6)
 unique_name_in_owner = true
 position = Vector2(24, 623)
 
+[node name="DialoguePlayer" parent="ParallaxBackground/ParallaxLayer2" instance=ExtResource("17_5me6j")]
+unique_name_in_owner = true
+position = Vector2(182, -19)
+
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.6, 0.6)
 
-[node name="Scaler" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2(693, 363)
-scale = Vector2(1e-05, 1e-05)
-texture = ExtResource("3_7nquv")
+[node name="Scaler" parent="ParallaxBackground/ParallaxLayer3" instance=ExtResource("4_d0spu")]
+position = Vector2(640, 800)
 
 [node name="Hand" parent="." instance=ExtResource("9_htnur")]
 position = Vector2(1050, 0)
@@ -302,6 +297,7 @@ position = Vector2(1760, 200)
 shape = SubResource("RectangleShape2D_q53ja")
 
 [node name="Game Manager" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_upsel")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Game Manager"]
@@ -321,5 +317,6 @@ limit_bottom = 900
 script = ExtResource("2_fixa2")
 
 [node name="Job Manager" type="Node" parent="Game Manager"]
+unique_name_in_owner = true
 script = ExtResource("14_xrg8f")
 buffer = Array[Resource("res://jobs/job_resource.gd")]([ExtResource("13_464t6"), ExtResource("14_csltc")])
