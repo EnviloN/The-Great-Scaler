@@ -1,4 +1,5 @@
 extends Node
+class_name CustomerManager
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var body_sprite: Sprite2D = $body

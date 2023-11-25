@@ -15,7 +15,7 @@ radius = 8.06226
 z_index = 28
 z_as_relative = false
 collision_layer = 2
-collision_mask = 5
+collision_mask = 2147483653
 mass = 0.4
 lock_rotation = true
 

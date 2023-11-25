@@ -19,18 +19,16 @@ func _ready():
 	z_index = default_z_index
 	reset_position()
 	
-
-func _process(_delta):
-	if is_active:
-		if Input.is_action_just_released("LMB"):
+func _input(event):
+	if is_active and event.is_action("LMB"):
+		if event.is_released():
 			animation_player.play_backwards()
-		elif Input.is_action_pressed("LMB"):
-			if not grabbed and Input.is_action_just_pressed("LMB"):
-				if grab_area.has_overlapping_areas():
-					overlapping_areas = grab_area.get_overlapping_areas()
-					animation_player.play("grab")
-				else:
-					animation_player.play("close")
+		elif event.is_pressed() and not event.is_echo() and not grabbed:
+			if grab_area.has_overlapping_areas():
+				overlapping_areas = grab_area.get_overlapping_areas()
+				animation_player.play("grab")
+			else:
+				animation_player.play("close")
 
 func _physics_process(_delta):
 	if is_active:

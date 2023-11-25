@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://b60tjuqjfqbfc"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_lhcqk"]
+
+[resource]
+script = ExtResource("1_lhcqk")
+id = 101
+is_base = false
+customer_id = 0
+item = "meat_bag"
+answer = false
+dialogue = Array[String](["fail", "fail no", "fail ?"])
+success_dialogue = Array[String](["foo foo foo"])
+fail_dialogue = Array[String](["bar bar bar"])
+on_sucess_id = 0
+on_sucess_pos = 0
+on_fail_id = 0
+on_fail_pos = 0

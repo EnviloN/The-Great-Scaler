@@ -1,18 +1,20 @@
 extends Node
+class_name GameManager
 
-@onready var customer_manager: Node2D = %Customers
+@onready var customer_manager: CustomerManager = %Customers
 @onready var animation_player: AnimationPlayer = $"AnimationPlayer"
+@onready var job_manager: JobManager = $"Job Manager"
 
 var is_weighting: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	customer_manager.set_customer_sprite(0)
-	customer_manager.enter()
+	job_manager.start_next_job()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if Input.is_action_just_pressed("RMB") and not animation_player.is_playing():
+func _input(event):
+	var just_pressed = event.is_pressed() and not event.is_echo()
+	if (event.is_action_pressed("RMB") and just_pressed
+		and not animation_player.is_playing()):
 		_toggle_mode()
 
 func _toggle_mode():
