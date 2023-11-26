@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://odvceo2uib8e"
-path="res://.godot/imported/table.png-91f82ccec6619280908ea8b29f20c6a8.ctex"
+uid="uid://cmxakdxwfis88"
+path="res://.godot/imported/2u Merged.PNG-c44f3aae6282bdc05e11a2ea9dcae16a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/table.png"
-dest_files=["res://.godot/imported/table.png-91f82ccec6619280908ea8b29f20c6a8.ctex"]
+source_file="res://sprites/weights/2u Merged.PNG"
+dest_files=["res://.godot/imported/2u Merged.PNG-c44f3aae6282bdc05e11a2ea9dcae16a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqkdoyd3hpuv"
-path="res://.godot/imported/1u.png-ee319cff9365e8f86e48b80f7be75302.ctex"
+uid="uid://b35geetl5r8bt"
+path="res://.godot/imported/.5u Merged.PNG-b57a8262a9eb51e0cc0686858e5cf048.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/weights/1u.png"
-dest_files=["res://.godot/imported/1u.png-ee319cff9365e8f86e48b80f7be75302.ctex"]
+source_file="res://sprites/weights/.5u Merged.PNG"
+dest_files=["res://.godot/imported/.5u Merged.PNG-b57a8262a9eb51e0cc0686858e5cf048.ctex"]
 
 [params]
 

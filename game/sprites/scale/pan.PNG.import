@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c07lanubyfbd1"
-path="res://.godot/imported/5u.png-1ef64bc5ad9e8b81d5a9b5e2295fce2f.ctex"
+uid="uid://wyywuckdayni"
+path="res://.godot/imported/pan.PNG-c6ba83a24674a741afe9ea8eb51344ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/weights/5u.png"
-dest_files=["res://.godot/imported/5u.png-1ef64bc5ad9e8b81d5a9b5e2295fce2f.ctex"]
+source_file="res://sprites/scale/pan.PNG"
+dest_files=["res://.godot/imported/pan.PNG-c6ba83a24674a741afe9ea8eb51344ca.ctex"]
 
 [params]
 

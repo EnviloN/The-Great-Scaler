@@ -20,3 +20,17 @@ theme_override_font_sizes/bold_italics_font_size = 25
 theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "Hello this is [b]interestring stuff[/b]. Hello this is interestring stuff. Hello this is interestring stuff. "
+
+[node name="Yes" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 127.0
+offset_right = 185.0
+offset_bottom = 179.0
+
+[node name="No" type="TextureButton" parent="Background"]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 123.0
+offset_right = 412.0
+offset_bottom = 183.0

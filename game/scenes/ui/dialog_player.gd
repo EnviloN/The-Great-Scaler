@@ -23,6 +23,8 @@ func _process(delta):
 func skip_animation():
 	text_label.visible_ratio = 1
 	is_animating = false
+	if current_text.size() == 0:
+		finish()
 
 func set_dialogue_text(dialogue: Array[String]):
 	current_text = dialogue.duplicate()
@@ -40,7 +42,7 @@ func show_text():
 func next_line():
 	if is_animating:
 		skip_animation()
-		return
+		return false
 		
 	if current_text.size() > 0:
 		show_text()

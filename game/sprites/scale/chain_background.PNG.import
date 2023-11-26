@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ohab282wb5ke"
-path="res://.godot/imported/2u.png-65b1451cadde8328cccd07b4a4d8e711.ctex"
+uid="uid://b7jvoqyamvk7v"
+path="res://.godot/imported/chain_background.PNG-e4f6a0890810bb26185d7c8574475591.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/weights/2u.png"
-dest_files=["res://.godot/imported/2u.png-65b1451cadde8328cccd07b4a4d8e711.ctex"]
+source_file="res://sprites/scale/chain_background.PNG"
+dest_files=["res://.godot/imported/chain_background.PNG-e4f6a0890810bb26185d7c8574475591.ctex"]
 
 [params]
 

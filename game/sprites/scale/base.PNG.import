@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv3idgxbr50iu"
-path="res://.godot/imported/weights.png-a7e6aaa5d28831af3cb47b49db92757c.ctex"
+uid="uid://bic8b3mefa1h8"
+path="res://.godot/imported/base.PNG-a76f3d4054789a9c02d837f17488835c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weights.png"
-dest_files=["res://.godot/imported/weights.png-a7e6aaa5d28831af3cb47b49db92757c.ctex"]
+source_file="res://sprites/scale/base.PNG"
+dest_files=["res://.godot/imported/base.PNG-a76f3d4054789a9c02d837f17488835c.ctex"]
 
 [params]
 

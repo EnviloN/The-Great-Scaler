@@ -49,6 +49,9 @@ RMB={
 2d_physics/layer_3="Scale Pans"
 2d_physics/layer_4="Hand"
 2d_physics/layer_9="Grab Areas"
+2d_physics/layer_10="Items"
+2d_physics/layer_12="Items"
+2d_physics/layer_31="Item Barrier"
 2d_physics/layer_32="Barrier"
 
 [physics]

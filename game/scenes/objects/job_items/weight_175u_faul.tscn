@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b27netc15bslr"]
+[gd_scene load_steps=5 format=3 uid="uid://cnyyk58m0bhlc"]
 
-[ext_resource type="Texture2D" uid="uid://cmxakdxwfis88" path="res://sprites/weights/2u Merged.PNG" id="1_ccwko"]
+[ext_resource type="Texture2D" uid="uid://cmxakdxwfis88" path="res://sprites/weights/2u Merged.PNG" id="1_vd8yl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o0hiy"]
 size = Vector2(74, 95)
@@ -11,18 +11,18 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_hepo4"]
 radius = 15.0
 
-[node name="Weight 2u" type="RigidBody2D"]
+[node name="Weight 175u faul" type="RigidBody2D"]
 z_index = 24
 z_as_relative = false
 collision_layer = 2
 collision_mask = 2147483653
-mass = 1.6
+mass = 1.4
 lock_rotation = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 47)
 scale = Vector2(0.667, 0.667)
-texture = ExtResource("1_ccwko")
+texture = ExtResource("1_vd8yl")
 region_rect = Rect2(41, 13, 34, 55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

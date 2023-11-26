@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://besinen640w5e"
-path="res://.godot/imported/scale_beam.png-90dce556d23dcd69960ed3f444e3fd97.ctex"
+uid="uid://btyv23y4tgg8w"
+path="res://.godot/imported/table.PNG-19bac20d0dc934cf58c7e2ddc3822b05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/scale/scale_beam.png"
-dest_files=["res://.godot/imported/scale_beam.png-90dce556d23dcd69960ed3f444e3fd97.ctex"]
+source_file="res://sprites/table.PNG"
+dest_files=["res://.godot/imported/table.PNG-19bac20d0dc934cf58c7e2ddc3822b05.ctex"]
 
 [params]
 
