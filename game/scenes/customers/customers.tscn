@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://c83vvqktetfho"]
 
 [ext_resource type="Script" path="res://scenes/customers/customers.gd" id="1_g2ue0"]
-[ext_resource type="Texture2D" uid="uid://cmff74xjk24ag" path="res://sprites/concept/customer/0.png" id="2_8sy30"]
-[ext_resource type="Texture2D" uid="uid://druqpv637q3hf" path="res://sprites/concept/customer/0_head.png" id="3_xfef4"]
+[ext_resource type="Texture2D" uid="uid://cemuefkftcaqk" path="res://sprites/customers/0/0.PNG" id="2_h4qwt"]
+[ext_resource type="Texture2D" uid="uid://013n7q4782a0" path="res://sprites/customers/0/0_head.PNG" id="3_jcm2y"]
 
 [sub_resource type="Animation" id="Animation_2kww5"]
 length = 0.001
@@ -142,13 +142,12 @@ _data = {
 script = ExtResource("1_g2ue0")
 
 [node name="body" type="Sprite2D" parent="."]
-position = Vector2(0, -112)
+position = Vector2(0, -116)
 scale = Vector2(0.667, 0.667)
-texture = ExtResource("2_8sy30")
+texture = ExtResource("2_h4qwt")
 
 [node name="head" type="Sprite2D" parent="body"]
-position = Vector2(-9.53674e-07, 13.4933)
-texture = ExtResource("3_xfef4")
+texture = ExtResource("3_jcm2y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckdykkc2oks8d"]
+[gd_scene load_steps=9 format=3 uid="uid://ckdykkc2oks8d"]
 
 [ext_resource type="Script" path="res://scenes/ui/dialog_player.gd" id="1_2p0rp"]
 [ext_resource type="Texture2D" uid="uid://durrlygcuyb7y" path="res://sprites/ui/dialogue_bg.PNG" id="2_m4p1h"]
-[ext_resource type="Texture2D" uid="uid://cohodhrtcsu0v" path="res://sprites/ui/yes_button.PNG" id="3_rkv2v"]
-[ext_resource type="Texture2D" uid="uid://wwwria1dcor3" path="res://sprites/ui/no_button.PNG" id="4_0lx3b"]
+[ext_resource type="Texture2D" uid="uid://d3jku8ylu2ccd" path="res://sprites/ui/yes_button.PNG" id="3_rkv2v"]
+[ext_resource type="Texture2D" uid="uid://bhb7b2f2yrnxs" path="res://sprites/ui/no_button.PNG" id="4_0lx3b"]
+[ext_resource type="Texture2D" uid="uid://buwqpaxbpdr63" path="res://sprites/ui/yes_button_pressed.PNG" id="4_xiwmj"]
+[ext_resource type="Texture2D" uid="uid://bpyc61m53xu13" path="res://sprites/ui/yes_button_dissabled.PNG" id="5_vj3x5"]
+[ext_resource type="Texture2D" uid="uid://iccvcg72huv" path="res://sprites/ui/no_button_pressed.PNG" id="7_5yc2v"]
+[ext_resource type="Texture2D" uid="uid://bjxemgkcqe11h" path="res://sprites/ui/no_button_dissabled.PNG" id="8_xsmav"]
 
 [node name="DialoguePlayer" type="Node2D"]
 script = ExtResource("1_2p0rp")
@@ -42,6 +46,8 @@ offset_right = 328.37
 offset_bottom = 249.74
 scale = Vector2(0.667, 0.667)
 texture_normal = ExtResource("3_rkv2v")
+texture_pressed = ExtResource("4_xiwmj")
+texture_disabled = ExtResource("5_vj3x5")
 stretch_mode = 0
 
 [node name="No" type="TextureButton" parent="."]
@@ -51,6 +57,8 @@ offset_right = 527.0
 offset_bottom = 249.74
 scale = Vector2(0.667, 0.667)
 texture_normal = ExtResource("4_0lx3b")
+texture_pressed = ExtResource("7_5yc2v")
+texture_disabled = ExtResource("8_xsmav")
 
 [connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="No" to="." method="_on_no_pressed"]
