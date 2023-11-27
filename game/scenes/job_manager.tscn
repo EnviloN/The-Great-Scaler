@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsb35i6vmlpw3"]
+
+[ext_resource type="Script" path="res://jobs/job_manager.gd" id="1_ypqti"]
+[ext_resource type="Resource" uid="uid://csiqmd7ftdji" path="res://jobs/100.tres" id="2_tgoi0"]
+[ext_resource type="Resource" uid="uid://u0811pb57avd" path="res://jobs/200.tres" id="3_vvtxm"]
+
+[node name="Job Manager" type="Node"]
+unique_name_in_owner = true
+script = ExtResource("1_ypqti")
+buffer = Array[Resource("res://jobs/job_resource.gd")]([ExtResource("2_tgoi0"), ExtResource("3_vvtxm")])
+
+[node name="Finish Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Next Job Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Finish Timer" to="." method="_on_finish_timer_timeout"]
+[connection signal="timeout" from="Next Job Timer" to="." method="_on_next_job_timer_timeout"]

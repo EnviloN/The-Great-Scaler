@@ -4,6 +4,7 @@ class_name GameManager
 @onready var customer_manager: CustomerManager = %Customers
 @onready var animation_player: AnimationPlayer = $"AnimationPlayer"
 @onready var job_manager: JobManager = %"Job Manager"
+@onready var dialogue_player: DialoguePlayer = %DialoguePlayer
 
 var is_weighting: bool = false
 
@@ -23,7 +24,9 @@ func _input(event):
 func _toggle_mode():
 	if is_weighting:
 		animation_player.play("sit")
+		dialogue_player.enable_buttons()
 		is_weighting = false
 	else:
 		animation_player.play("to_scale")
+		dialogue_player.disable_buttons()
 		is_weighting = true

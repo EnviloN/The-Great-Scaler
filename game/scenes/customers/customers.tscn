@@ -67,6 +67,18 @@ tracks/1/keys = {
 "method": &"start_talking"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.667, 0.667)]
+}
 
 [sub_resource type="Animation" id="Animation_4r8xs"]
 resource_name = "leave"
@@ -78,7 +90,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.1, -1, 0, -0.25, 0, 0.2, -24, 6, -0.1, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -1, 0, -0.25, 0, 0.2, -24, 6, -0.1, 0, 0.25, 0, -1600, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.2, 0.5, 1)
 }
 tracks/1/type = "bezier"

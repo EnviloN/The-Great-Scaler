@@ -2,7 +2,9 @@ extends Node2D
 class_name DialoguePlayer
 
 @onready var background: TextureRect = $Background
-@onready var text_label: RichTextLabel = $"Background/Text Label"
+@onready var text_label: RichTextLabel = $"Text Label"
+@onready var yes_button: BaseButton = $Yes
+@onready var no_button: BaseButton = $No
 @onready var job_manager: JobManager = %"Job Manager"
 
 var TEXT_SPEED: float = 8.0
@@ -12,9 +14,9 @@ var is_animating: bool = false
 var current_text: Array[String] = []
 
 func _ready():
-	background.visible = false
+	disable()
 
-func _process(delta):
+func _process(_delta):
 	if is_animating:
 		text_label.visible_ratio += 1.0/text_label.text.length()/TEXT_SPEED
 		if text_label.visible_ratio >= 1:
@@ -54,10 +56,38 @@ func next_line():
 func finish():
 	in_progress = false
 	job_manager.on_dialogue_finished()
+	
+	if job_manager.is_waiting():
+		show_buttons()
+		enable_buttons()
 
 func disable():
 	text_label.text = ""
 	background.visible = false
+	hide_buttons()
+	disable_buttons()
 
 func is_in_progress():
 	return in_progress
+
+func show_buttons():
+	yes_button.visible = true
+	no_button.visible = true
+	
+func hide_buttons():
+	yes_button.visible = false
+	no_button.visible = false
+
+func disable_buttons():
+	yes_button.disabled = true
+	no_button.disabled = true
+
+func enable_buttons():
+	yes_button.disabled = false
+	no_button.disabled = false
+
+func _on_yes_pressed():
+	SignalBus.emit_signal("finish_job", true)
+
+func _on_no_pressed():
+	SignalBus.emit_signal("finish_job", false)

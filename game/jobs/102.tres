@@ -4,10 +4,10 @@
 
 [resource]
 script = ExtResource("1_lhcqk")
-id = 101
+id = 102
 is_base = false
 customer_id = 0
-item = "meat_bag"
+item = "placeholder"
 answer = false
 dialogue = Array[String](["fail", "fail no", "fail ?"])
 success_dialogue = Array[String](["foo foo foo"])
