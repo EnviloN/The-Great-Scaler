@@ -13,6 +13,7 @@
 [node name="DialoguePlayer" type="Node2D"]
 script = ExtResource("1_2p0rp")
 metadata/_edit_vertical_guides_ = []
+metadata/_edit_horizontal_guides_ = [195.0]
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 7

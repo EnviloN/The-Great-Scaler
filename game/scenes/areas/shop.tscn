@@ -273,10 +273,10 @@ unique_name_in_owner = true
 position = Vector2(1202, 647)
 
 [node name="Weight _05u" parent="Workspace/Weight Container" instance=ExtResource("11_5hv1l")]
-position = Vector2(20, 75)
+position = Vector2(31, 0)
 
 [node name="Weight _025u" parent="Workspace/Weight Container" instance=ExtResource("12_pa1dt")]
-position = Vector2(-38, 84)
+position = Vector2(-27, 9)
 scale = Vector2(1, 1.00748)
 
 [node name="Scale" parent="Workspace" instance=ExtResource("4_18fl8")]

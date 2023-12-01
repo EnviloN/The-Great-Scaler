@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuaens8nbmlx1"]
 
-[ext_resource type="Texture2D" uid="uid://bkqqxt7j6dsb7" path="res://sprites/concept/scaler/scaler.png" id="1_5uc2c"]
 [ext_resource type="Script" path="res://scenes/scaler/scaler.gd" id="1_auuvp"]
+[ext_resource type="Texture2D" uid="uid://dqkvfankxal3i" path="res://sprites/scaler/scaler.PNG" id="2_fwa0j"]
 
 [sub_resource type="Animation" id="Animation_klhln"]
 resource_name = "RESET"
@@ -60,9 +60,9 @@ _data = {
 script = ExtResource("1_auuvp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(50, -437)
+position = Vector2(6, -184)
 scale = Vector2(0.333, 0.333)
-texture = ExtResource("1_5uc2c")
+texture = ExtResource("2_fwa0j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk2ajovc0410g"
-path="res://.godot/imported/scaler_seated.png-ce1ac2ee45950655601fa368d55a24dc.ctex"
+uid="uid://dqkvfankxal3i"
+path="res://.godot/imported/scaler.PNG-6a76ac7b62a7aa44b227dd705a3efc26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/scaler/scaler_seated.png"
-dest_files=["res://.godot/imported/scaler_seated.png-ce1ac2ee45950655601fa368d55a24dc.ctex"]
+source_file="res://sprites/scaler/scaler.PNG"
+dest_files=["res://.godot/imported/scaler.PNG-6a76ac7b62a7aa44b227dd705a3efc26.ctex"]
 
 [params]
 
