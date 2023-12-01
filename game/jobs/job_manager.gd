@@ -20,6 +20,9 @@ var task_item: RigidBody2D = null
 var item_parent: Node2D
 var items: Dictionary = {
 	"placeholder": preload("res://scenes/objects/job_items/placeholder.tscn"),
+	"copper_ingot": preload("res://scenes/objects/job_items/copper_ingot.tscn"),
+	"iron_ingot": preload("res://scenes/objects/job_items/iron_ingot.tscn"),
+	"crown": preload("res://scenes/objects/job_items/crown.tscn"),
 	"weight_175u_faul": preload("res://scenes/objects/weights/weight_175u_faul.tscn"),
 	"weight_1u": preload("res://scenes/objects/weights/weight_1u.tscn"),
 }

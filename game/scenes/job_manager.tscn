@@ -29,11 +29,11 @@ script = ExtResource("1_ypqti")
 buffer = Array[ExtResource("3_uxut5")]([ExtResource("2_tgoi0"), SubResource("Resource_1d2w5")])
 
 [node name="Finish Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 3.0
 one_shot = true
 
 [node name="Next Job Timer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 2.0
 one_shot = true
 
 [connection signal="timeout" from="Finish Timer" to="." method="_on_finish_timer_timeout"]

@@ -5,6 +5,11 @@ class_name CustomerManager
 @onready var body_sprite: Sprite2D = $body
 @onready var head_sprite: Sprite2D = $body/head
 @onready var dialogue_player: DialoguePlayer = %DialoguePlayer
+@onready var audio_stream: AudioStreamPlayer2D = $"../../../AudioStreamPlayer"
+
+
+
+var current_customer_id: int = 0
 
 var customer_bodies: Array[Texture2D] = [
 	preload("res://sprites/customers/0/0.PNG"),
@@ -25,11 +30,25 @@ var customer_heads: Array[Texture2D] = [
 	preload("res://sprites/customers/6/6_head.PNG")
 ]
 
+var voices: Dictionary = {}
+
 func _ready():
 	body_sprite.position.x = -1600
 	SignalBus.connect("progress_dialogue", on_progress_dialogue)
-
+	
+	for i in range(7):
+		if i in [3, 4]: continue
+		var dir_path = "res://sounds/voices/{id}".format({"id": i})
+		var files = DirAccess.get_files_at(dir_path)
+		var sounds = []
+		for file in files:
+			if not file.ends_with(".import"):
+				sounds.append(load(dir_path + "/{file}".format({"file": file})))
+		
+		voices[i] = sounds
+		
 func set_customer_sprite(id: int):
+	current_customer_id = id
 	body_sprite.set_texture(customer_bodies[id])
 	head_sprite.set_texture(customer_heads[id])	
 	
@@ -40,7 +59,14 @@ func leave():
 	animation_player.play("leave")
 	
 func talk():
+	_play_random_voice()
 	animation_player.play("talk")
+	
+func _play_random_voice():
+	var id = current_customer_id if not current_customer_id in [3,4] else 2
+	var sound = (voices[id] as Array).pick_random()
+	audio_stream.stream = sound
+	audio_stream.play()
 
 func start_talking():
 	dialogue_player.start_dialogue()

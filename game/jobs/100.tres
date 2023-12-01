@@ -5,11 +5,12 @@
 [resource]
 script = ExtResource("1_4x27e")
 customer_id = 1
-is_punishing = false
+punishment = 0
 dialogue = Array[String](["Hello, dear husband. I see you have set up your shop already.", "I hope you will get more customers in this town and that they won't be frightened by your appearance.", "I feel we made a good choice coming here.", "Did you have a chance to look at the weights I made for you?"])
 is_task = true
 answer = true
 task_item = ""
+task_item_units = 0.0
 reward_item = ""
 success_dialogue = Array[String](["Great! I'm sorry that it's all you have for now. I think you will make due, though.", "I will craft some more once I have my workbench set up."])
 fail_dialogue = Array[String](["I hope they'll be good enough for your work then. I'm sorry that it's all you have for now.", "I think you will make due, though. I will craft some more once I have my workbench set up."])
@@ -17,3 +18,5 @@ on_sucess_id = ""
 on_sucess_pos = -1
 on_fail_id = ""
 on_fail_pos = -1
+is_ending = false
+ending_id = 0

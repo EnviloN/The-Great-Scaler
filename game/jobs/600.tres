@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_1rx32")
 customer_id = 6
-is_punishing = false
+punishment = 0
 dialogue = Array[String](["Let me see...", "A nice scale you have there, Scaler.", " ... Yeees, veeery nice.", "Don't mind me, I'm just taking a look."])
 is_task = false
 answer = false
@@ -18,3 +18,5 @@ on_sucess_id = ""
 on_sucess_pos = 0
 on_fail_id = ""
 on_fail_pos = 0
+is_ending = false
+ending_id = 0
