@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgrdek48ak8c6"
-path="res://.godot/imported/full.png-a3a55ccdc89f87de6da36428afc164b3.ctex"
+uid="uid://cmp2g7t4ikpiu"
+path="res://.godot/imported/LMB hold.PNG-3c7368b732159813d8151f59e46787a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/concept/full.png"
-dest_files=["res://.godot/imported/full.png-a3a55ccdc89f87de6da36428afc164b3.ctex"]
+source_file="res://sprites/ui/LMB hold.PNG"
+dest_files=["res://.godot/imported/LMB hold.PNG-3c7368b732159813d8151f59e46787a2.ctex"]
 
 [params]
 

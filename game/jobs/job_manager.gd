@@ -15,11 +15,16 @@ enum JobState {NONE, INIT, WAITING, FINISH}
 @export var buffer: Array[Job]
 var current: Job = null
 var state: JobState = JobState.NONE
+var jobs_done: int = 0
 
 var task_item: RigidBody2D = null
 var item_parent: Node2D
 var items: Dictionary = {
 	"placeholder": preload("res://scenes/objects/job_items/placeholder.tscn"),
+	"bag_of_salt": preload("res://scenes/objects/job_items/bag_of_salt.tscn"),
+	"bag_of_pepper": preload("res://scenes/objects/job_items/bag_of_pepper.tscn"),
+	"meat_bag": preload("res://scenes/objects/job_items/meat_bag.tscn"),
+	"small_meat_bag": preload("res://scenes/objects/job_items/small_meat_bag.tscn"),
 	"copper_ingot": preload("res://scenes/objects/job_items/copper_ingot.tscn"),
 	"iron_ingot": preload("res://scenes/objects/job_items/iron_ingot.tscn"),
 	"crown": preload("res://scenes/objects/job_items/crown.tscn"),
@@ -53,6 +58,8 @@ func is_waiting():
 func on_dialogue_finished():
 	if state == JobState.INIT:
 		state = JobState.WAITING
+		if jobs_done == 0:
+			game_manager.show_toggle_hint()
 	elif state == JobState.FINISH:
 		state = JobState.NONE
 		_spawn_reward()
@@ -116,6 +123,7 @@ func _on_finish_timer_timeout():
 	else:
 		dialogue_player.disable()
 		customer_manager.leave()
+		jobs_done += 1
 		current = null
 		if is_job_available():
 			next_timer.start()

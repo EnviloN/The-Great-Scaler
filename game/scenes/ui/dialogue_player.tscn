@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckdykkc2oks8d"]
+[gd_scene load_steps=10 format=3 uid="uid://ckdykkc2oks8d"]
 
 [ext_resource type="Script" path="res://scenes/ui/dialog_player.gd" id="1_2p0rp"]
 [ext_resource type="Texture2D" uid="uid://durrlygcuyb7y" path="res://sprites/ui/dialogue_bg.PNG" id="2_m4p1h"]
+[ext_resource type="Texture2D" uid="uid://nxvyhtqqhgyq" path="res://sprites/ui/LMB.PNG" id="3_e1pw7"]
 [ext_resource type="Texture2D" uid="uid://d3jku8ylu2ccd" path="res://sprites/ui/yes_button.PNG" id="3_rkv2v"]
 [ext_resource type="Texture2D" uid="uid://bhb7b2f2yrnxs" path="res://sprites/ui/no_button.PNG" id="4_0lx3b"]
 [ext_resource type="Texture2D" uid="uid://buwqpaxbpdr63" path="res://sprites/ui/yes_button_pressed.PNG" id="4_xiwmj"]
@@ -25,6 +26,11 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.667, 0.667)
 texture = ExtResource("2_m4p1h")
+
+[node name="Lmb" type="Sprite2D" parent="Background"]
+position = Vector2(709.146, 296.852)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("3_e1pw7")
 
 [node name="Text Label" type="RichTextLabel" parent="."]
 offset_left = 15.0

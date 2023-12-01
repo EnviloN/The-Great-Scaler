@@ -5,9 +5,7 @@ class_name CustomerManager
 @onready var body_sprite: Sprite2D = $body
 @onready var head_sprite: Sprite2D = $body/head
 @onready var dialogue_player: DialoguePlayer = %DialoguePlayer
-@onready var audio_stream: AudioStreamPlayer2D = $"../../../AudioStreamPlayer"
-
-
+@onready var audio_stream: PitchRandomizedPlayer = $"../../../AudioStreamPlayer"
 
 var current_customer_id: int = 0
 
@@ -30,23 +28,61 @@ var customer_heads: Array[Texture2D] = [
 	preload("res://sprites/customers/6/6_head.PNG")
 ]
 
-var voices: Dictionary = {}
+var voices: Dictionary = {
+	0: [
+		preload("res://sounds/voices/0/1.mp3"),
+		preload("res://sounds/voices/0/2.mp3"),
+		preload("res://sounds/voices/0/3.mp3"),
+		preload("res://sounds/voices/0/4.mp3"),
+		preload("res://sounds/voices/0/5.mp3"),
+		preload("res://sounds/voices/0/6.mp3"),
+		preload("res://sounds/voices/0/7.mp3"),
+		preload("res://sounds/voices/0/8.mp3")
+	],
+	1: [
+		preload("res://sounds/voices/1/1.mp3"),
+		preload("res://sounds/voices/1/2.mp3"),
+		preload("res://sounds/voices/1/3.mp3"),
+		preload("res://sounds/voices/1/4.mp3"),
+		preload("res://sounds/voices/1/5.mp3"),
+		preload("res://sounds/voices/1/6.mp3"),
+		preload("res://sounds/voices/1/7.mp3"),
+		preload("res://sounds/voices/1/8.mp3")
+	],
+	2: [
+		preload("res://sounds/voices/2/1.mp3"),
+		preload("res://sounds/voices/2/2.mp3"),
+		preload("res://sounds/voices/2/3.mp3"),
+		preload("res://sounds/voices/2/4.mp3"),
+		preload("res://sounds/voices/2/5.mp3"),
+		preload("res://sounds/voices/2/6.mp3"),
+		preload("res://sounds/voices/2/7.mp3"),
+		preload("res://sounds/voices/2/8.mp3")
+	],
+	5: [
+		preload("res://sounds/voices/5/1.mp3"),
+		preload("res://sounds/voices/5/2.mp3"),
+		preload("res://sounds/voices/5/3.mp3"),
+		preload("res://sounds/voices/5/4.mp3"),
+		preload("res://sounds/voices/5/5.mp3"),
+		preload("res://sounds/voices/5/6.mp3"),
+		preload("res://sounds/voices/5/7.mp3")
+	],
+	6: [
+		preload("res://sounds/voices/6/1.mp3"),
+		preload("res://sounds/voices/6/2.mp3"),
+		preload("res://sounds/voices/6/3.mp3"),
+		preload("res://sounds/voices/6/4.mp3"),
+		preload("res://sounds/voices/6/5.mp3"),
+		preload("res://sounds/voices/6/6.mp3"),
+		preload("res://sounds/voices/6/7.mp3")
+	]
+}
 
 func _ready():
 	body_sprite.position.x = -1600
 	SignalBus.connect("progress_dialogue", on_progress_dialogue)
 	
-	for i in range(7):
-		if i in [3, 4]: continue
-		var dir_path = "res://sounds/voices/{id}".format({"id": i})
-		var files = DirAccess.get_files_at(dir_path)
-		var sounds = []
-		for file in files:
-			if not file.ends_with(".import"):
-				sounds.append(load(dir_path + "/{file}".format({"file": file})))
-		
-		voices[i] = sounds
-		
 func set_customer_sprite(id: int):
 	current_customer_id = id
 	body_sprite.set_texture(customer_bodies[id])
@@ -64,9 +100,9 @@ func talk():
 	
 func _play_random_voice():
 	var id = current_customer_id if not current_customer_id in [3,4] else 2
-	var sound = (voices[id] as Array).pick_random()
+	var sound = voices[id].pick_random() as AudioStreamMP3
 	audio_stream.stream = sound
-	audio_stream.play()
+	audio_stream.one_shot()
 
 func start_talking():
 	dialogue_player.start_dialogue()

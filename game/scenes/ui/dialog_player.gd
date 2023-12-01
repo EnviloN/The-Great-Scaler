@@ -6,6 +6,7 @@ class_name DialoguePlayer
 @onready var yes_button: BaseButton = $Yes
 @onready var no_button: BaseButton = $No
 @onready var job_manager: JobManager = %"Job Manager"
+@onready var mouse_icon: Sprite2D = $Background/Lmb
 
 var TEXT_SPEED: float = 6.0
 
@@ -55,6 +56,7 @@ func next_line():
 
 func finish():
 	in_progress = false
+	mouse_icon.visible = false
 	job_manager.on_dialogue_finished()
 	
 	if job_manager.is_waiting():
@@ -73,10 +75,12 @@ func is_in_progress():
 func show_buttons():
 	yes_button.visible = true
 	no_button.visible = true
+	mouse_icon.visible = false
 	
 func hide_buttons():
 	yes_button.visible = false
 	no_button.visible = false
+	mouse_icon.visible = true
 
 func disable_buttons():
 	yes_button.disabled = true

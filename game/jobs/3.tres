@@ -18,3 +18,5 @@ on_sucess_id = ""
 on_sucess_pos = 0
 on_fail_id = ""
 on_fail_pos = 0
+is_ending = false
+ending_id = 0
