@@ -5,6 +5,7 @@ class_name GameManager
 @onready var animation_player: AnimationPlayer = $"AnimationPlayer"
 @onready var job_manager: JobManager = %"Job Manager"
 @onready var dialogue_player: DialoguePlayer = %DialoguePlayer
+@onready var endgame = $"../End_game"
 
 @onready var toggle_hint: Node2D = $"../ParallaxBackground/ParallaxLayer2/ToggleHint"
 @onready var grab_hint: Node2D = $"../ParallaxBackground/ParallaxLayer3/GrabHint"
@@ -44,11 +45,11 @@ func punish_player(severity: int):
 
 func end_game(ending: int):
 	if ending == 1:
-		print("neutral_ending")
+		endgame.end_game("Life goes on")
 	elif ending == 2:
-		print("good ending")
+		endgame.end_game("You became Royal Scaler")
 	elif ending == 3:
-		print("bad ending")
+		endgame.end_game("You Died")
 
 func _toggle_mode():
 	if is_weighting:
