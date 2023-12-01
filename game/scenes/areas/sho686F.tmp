@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dq0j43qqh455h"]
+[gd_scene load_steps=29 format=3 uid="uid://dq0j43qqh455h"]
 
 [ext_resource type="Texture2D" uid="uid://b11x7aqqqap72" path="res://sprites/background.PNG" id="1_tvvtu"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_upsel"]
@@ -18,14 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bsb35i6vmlpw3" path="res://scenes/job_manager.tscn" id="17_twlec"]
 [ext_resource type="Resource" uid="uid://csiqmd7ftdji" path="res://jobs/100.tres" id="18_fn8y0"]
 [ext_resource type="Resource" uid="uid://bnhxv0uildyot" path="res://jobs/0.tres" id="19_15kqa"]
+[ext_resource type="PackedScene" uid="uid://bfeef0uhlicp5" path="res://scenes/objects/job_items/placeholder.tscn" id="19_cxdkl"]
 [ext_resource type="Resource" uid="uid://ddex42xrdl6qd" path="res://jobs/500.tres" id="20_s42a7"]
 [ext_resource type="Resource" uid="uid://d3cdem3avtomd" path="res://jobs/600.tres" id="21_tss1f"]
 [ext_resource type="Resource" uid="uid://b6xgonkoualm" path="res://jobs/101.tres" id="22_vj1lo"]
-[ext_resource type="Resource" uid="uid://1quoyyu16xad" path="res://jobs/102.tres" id="23_knhai"]
 [ext_resource type="Resource" uid="uid://dgbjstotmdw7w" path="res://jobs/601.tres" id="23_t2tvr"]
-[ext_resource type="Resource" uid="uid://dor860a84viqe" path="res://jobs/501.tres" id="24_71508"]
-[ext_resource type="Resource" uid="uid://tljxjg4bbqkt" path="res://jobs/602.tres" id="25_6mj8x"]
-[ext_resource type="Resource" uid="uid://bwgvt5wdepxbs" path="res://jobs/103.tres" id="26_70fpm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q53ja"]
 size = Vector2(600, 1600)
@@ -306,6 +303,9 @@ shape = SubResource("RectangleShape2D_q53ja")
 position = Vector2(1760, 200)
 shape = SubResource("RectangleShape2D_q53ja")
 
+[node name="Placeholder" parent="Workspace" instance=ExtResource("19_cxdkl")]
+position = Vector2(352, 542)
+
 [node name="Game Manager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_upsel")
@@ -327,4 +327,4 @@ limit_bottom = 900
 script = ExtResource("2_fixa2")
 
 [node name="Job Manager" parent="Game Manager" instance=ExtResource("17_twlec")]
-buffer = Array[Resource("res://jobs/job_resource.gd")]([ExtResource("18_fn8y0"), ExtResource("19_15kqa"), ExtResource("20_s42a7"), ExtResource("21_tss1f"), ExtResource("22_vj1lo"), ExtResource("23_t2tvr"), ExtResource("23_knhai"), ExtResource("24_71508"), ExtResource("25_6mj8x"), ExtResource("26_70fpm")])
+buffer = Array[Resource("res://jobs/job_resource.gd")]([ExtResource("18_fn8y0"), ExtResource("19_15kqa"), ExtResource("20_s42a7"), ExtResource("21_tss1f"), ExtResource("22_vj1lo"), ExtResource("23_t2tvr")])

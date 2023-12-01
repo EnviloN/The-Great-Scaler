@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://blsct0gdsgvyd"]
 
 [ext_resource type="Script" path="res://scenes/scaler/hand.gd" id="1_bxonl"]
-[ext_resource type="Texture2D" uid="uid://drjx1666u5b66" path="res://sprites/concept/scaler/animated/hand_animated-sheet.png" id="2_3qkw1"]
+[ext_resource type="Texture2D" uid="uid://ctmvx5t7ddbtm" path="res://sprites/hand/hand_anim.png" id="2_514yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nli3q"]
-size = Vector2(187, 1455)
+size = Vector2(187, 1489.75)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_totto"]
 
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(8.5, -2500)]
+"values": [Vector2(0.995, -2500)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -44,7 +44,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(51, -2500)]
+"values": [Vector2(17, -2500)]
 }
 
 [sub_resource type="Animation" id="Animation_p2xls"]
@@ -58,8 +58,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-2500, -0.25, 0, 0.1, 88.5, -705.5, -0.25, 0, 0.0999999, 1, -712, -0.1, 5, 0.0406095, -8, -712, -0.0269213, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.7)
+"points": PackedFloat32Array(-2500, -0.25, 0, 0.1, 88.5, -725, -0.25, 0, 0.0837531, -12, -746, -0.0735393, 14, 0.0408552, -2, -748, -0.040189, 6, 0.25, 0),
+"times": PackedFloat32Array(0, 0.497412, 0.611806, 0.7)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -89,7 +89,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ry3w1"]
 resource_name = "close"
-length = 0.3
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -97,10 +97,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 6]
 }
 
 [sub_resource type="Animation" id="Animation_1jf68"]
@@ -114,8 +114,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-712, -0.25, 0, 0.0324693, 11.5, -675.5, -0.0385371, 0, 0.25, 0, -2500, -0.0735408, 154.5, 0.25, 0),
-"times": PackedFloat32Array(0, 0.115351, 0.7)
+"points": PackedFloat32Array(-748, -0.25, 0, 0.0324693, 11.5, -715, -0.0385371, 0, 0.25, 0, -2500, -0.0735408, 154.5, 0.25, 0),
+"times": PackedFloat32Array(0, 0.115628, 0.7)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -131,7 +131,8 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_osv71"]
 resource_name = "grab"
-length = 0.2
+length = 0.12
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -139,10 +140,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
+"times": PackedFloat32Array(0, 0.0001, 0.12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0, 0, 5]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -151,7 +152,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.100785),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
@@ -178,12 +179,13 @@ collision_layer = 8
 script = ExtResource("1_bxonl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(51, -2500)
-texture = ExtResource("2_3qkw1")
+position = Vector2(17, -2500)
+texture = ExtResource("2_514yv")
 hframes = 3
+vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, -2500)
+position = Vector2(0.995, -2500)
 shape = SubResource("RectangleShape2D_nli3q")
 
 [node name="Grab Area" type="Area2D" parent="."]

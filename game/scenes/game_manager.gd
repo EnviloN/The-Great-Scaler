@@ -7,6 +7,7 @@ class_name GameManager
 @onready var dialogue_player: DialoguePlayer = %DialoguePlayer
 
 var is_weighting: bool = false
+var punishments: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +22,18 @@ func _input(event):
 	and not job_manager.is_waiting()):
 		SignalBus.emit_signal("progress_dialogue")
 		
+func punish_player(severity: int):
+	punishments += severity
+	print("Punishment: {p}".format({"p": punishments}))
+
+func end_game(ending: int):
+	if ending == 1:
+		print("neutral_ending")
+	elif ending == 2:
+		print("good ending")
+	elif ending == 3:
+		print("bad ending")
+
 func _toggle_mode():
 	if is_weighting:
 		animation_player.play("sit")

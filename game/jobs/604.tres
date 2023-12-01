@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://vkgnofafnokp"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_1rylh"]
+
+[resource]
+script = ExtResource("1_1rylh")
+customer_id = 6
+punishment = 0
+dialogue = Array[String](["Damn you, Scaler!", "How are your scales so precise? Mine are way off!", "I will find your secret and then you'll be out of business."])
+is_task = false
+answer = false
+task_item = ""
+task_item_units = 0.0
+reward_item = ""
+success_dialogue = Array[String]([])
+fail_dialogue = Array[String]([])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0

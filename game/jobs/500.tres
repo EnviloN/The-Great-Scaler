@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://ddex42xrdl6qd"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_pb1ju"]
+
+[resource]
+script = ExtResource("1_pb1ju")
+customer_id = 5
+punishment = 0
+dialogue = Array[String](["Good day to you, Scaler. I am the local hunter in this town. It is nice to meet you.", "I might often be in need of your services. You see, I hunt animals in the forest and then sell the meat at the market.", "As you can imagine, it is good to know how much meat I bring from a hunt, and what quantities I sell to set the correct price.", "Right now, I just have some raw materials that I need you to weight for me. I have bought these from the merchant - greedy fella.", "It should be one and three quarters od a units of copper. Is that correct?"])
+is_task = true
+answer = false
+task_item = "placeholder"
+task_item_units = 1.5
+reward_item = ""
+success_dialogue = Array[String](["Ah, I see. The greedy swindler! I'll teach him a lesson.", "Anyways, thank you for the help. I will come here more often, so I will compensate you later."])
+fail_dialogue = Array[String](["Thank you for the help. I will come here more often, so I will compensate you later."])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0
+is_ending = false
+ending_id = 0

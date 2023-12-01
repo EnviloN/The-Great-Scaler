@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://b60tjuqjfqbfc"]
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://1quoyyu16xad"]
 
 [ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_lhcqk"]
 
 [resource]
 script = ExtResource("1_lhcqk")
-id = 102
-is_base = false
-customer_id = 0
-item = "placeholder"
+customer_id = 1
+punishment = 0
+dialogue = Array[String](["Husband, I've bought this raw material for your weights. I got it from the local merchant but I've heard he is greedy and faul.", "It should be one and a half units of copper. Is that right?"])
+is_task = true
 answer = false
-dialogue = Array[String](["fail", "fail no", "fail ?"])
-success_dialogue = Array[String](["foo foo foo"])
-fail_dialogue = Array[String](["bar bar bar"])
-on_sucess_id = 0
+task_item = "placeholder"
+task_item_units = 1.25
+reward_item = ""
+success_dialogue = Array[String](["Thank you, I will keep an eye out when buying from him again."])
+fail_dialogue = Array[String](["Thank you, honey."])
+on_sucess_id = ""
 on_sucess_pos = 0
-on_fail_id = 0
+on_fail_id = ""
 on_fail_pos = 0
+is_ending = false
+ending_id = 0

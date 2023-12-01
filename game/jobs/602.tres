@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://tljxjg4bbqkt"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_q3vmr"]
+
+[resource]
+script = ExtResource("1_q3vmr")
+customer_id = 6
+punishment = 0
+dialogue = Array[String](["Scaler, I want you to verify this weight for me. Is it correct?"])
+is_task = true
+answer = false
+task_item = "weight_175u_faul"
+task_item_units = 1.75
+reward_item = "weight_175u_faul"
+success_dialogue = Array[String](["Baaaaah! You keep it then! It's no use for me."])
+fail_dialogue = Array[String](["Thank, Scaler."])
+on_sucess_id = "604"
+on_sucess_pos = 2
+on_fail_id = "603"
+on_fail_pos = 1

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://dgbjstotmdw7w"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_xeodg"]
+
+[resource]
+script = ExtResource("1_xeodg")
+customer_id = 6
+punishment = 0
+dialogue = Array[String](["Scaler, weight this for me.", "Is it two units of Iron?"])
+is_task = true
+answer = true
+task_item = "placeholder"
+task_item_units = 2.0
+reward_item = ""
+success_dialogue = Array[String](["Thanks."])
+fail_dialogue = Array[String](["Beeeh!"])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0

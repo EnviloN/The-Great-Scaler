@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://dor860a84viqe"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_p7r70"]
+
+[resource]
+script = ExtResource("1_p7r70")
+customer_id = 5
+punishment = 0
+dialogue = Array[String](["Hello Scaler, can you weight this bag of meat for me, please? I'm going to sell it on the market.", "I think it's three quarters of a unit of meat. Can you confirm that?"])
+is_task = true
+answer = false
+task_item = "placeholder"
+task_item_units = 0.5
+reward_item = ""
+success_dialogue = Array[String](["Oh well... I'm probably going to sell it as three quarters anyways.", "We're both business owners here, so let's make a deal.", "If anyone comes to you to weight the meat, just say that everything checks out.", "I might make it worth your time."])
+fail_dialogue = Array[String](["Thanks, Scaler.", "Listen... We're both business owners here. So I'll tell you what.", "I'm going to sell this bag for a bit higher price, so if anyone comes to you to weight the meat, just say that everything checks out.", "I might make it worth your time."])
+on_sucess_id = "4"
+on_sucess_pos = 1
+on_fail_id = "5"
+on_fail_pos = 1
+is_ending = false
+ending_id = 0

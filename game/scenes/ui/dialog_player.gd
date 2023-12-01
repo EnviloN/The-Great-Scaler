@@ -7,7 +7,7 @@ class_name DialoguePlayer
 @onready var no_button: BaseButton = $No
 @onready var job_manager: JobManager = %"Job Manager"
 
-var TEXT_SPEED: float = 8.0
+var TEXT_SPEED: float = 6.0
 
 var in_progress: bool = false
 var is_animating: bool = false

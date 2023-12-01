@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://8q66rjv5fsjq"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_3ylvj"]
+
+[resource]
+script = ExtResource("1_3ylvj")
+customer_id = 0
+punishment = 1
+dialogue = Array[String](["You faul creature! You have lied to me and I have made myself look like a fool at the market!", "Even though the merchant has given me extra pepper for free and I have confronted him!", "Wait until the King hears about this!"])
+is_task = false
+answer = false
+task_item = ""
+task_item_units = 0.0
+reward_item = ""
+success_dialogue = Array[String]([])
+fail_dialogue = Array[String]([])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0

@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var item_parent = $"Base/Beam Joint/Beam/Left Pan Joint/Left Pan/Task Item Parent"
 @export var debug : bool = true
 
 @export_group("Joint")
@@ -14,6 +15,8 @@ func _ready():
 	$"Base/Beam Joint".softness = softness
 	_update_springs()
 
+func get_task_item_parent():
+	return item_parent
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):

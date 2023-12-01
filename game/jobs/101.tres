@@ -1,18 +1,22 @@
-[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://23hqhr4r0bvh"]
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://b6xgonkoualm"]
 
-[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_o485m"]
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_245ab"]
 
 [resource]
-script = ExtResource("1_o485m")
-id = 101
-is_base = false
-customer_id = 0
-item = "placeholder"
-answer = true
-dialogue = Array[String](["success", "success yes", "success ?"])
-success_dialogue = Array[String](["foo foo foo"])
-fail_dialogue = Array[String](["bar bar bar"])
-on_sucess_id = 0
+script = ExtResource("1_245ab")
+customer_id = 1
+punishment = 0
+dialogue = Array[String](["Hello, husband. How's the shop running?", "I have finally set up my workbench, and I crafted you this - a one unit weight!", "Look how shiny it is. I'm sure you'll find a good use for it.", "See you later!"])
+is_task = false
+answer = false
+task_item = ""
+task_item_units = 0.0
+reward_item = "weight_1u"
+success_dialogue = Array[String]([])
+fail_dialogue = Array[String]([])
+on_sucess_id = ""
 on_sucess_pos = 0
-on_fail_id = 0
+on_fail_id = ""
 on_fail_pos = 0
+is_ending = false
+ending_id = 0

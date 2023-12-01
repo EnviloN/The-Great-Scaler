@@ -83,6 +83,9 @@ shape = SubResource("RectangleShape2D_x31m2")
 position = Vector2(190, -90)
 shape = SubResource("RectangleShape2D_x31m2")
 
+[node name="Task Item Parent" type="Node2D" parent="Base/Beam Joint/Beam/Left Pan Joint/Left Pan"]
+position = Vector2(0, 60)
+
 [node name="Right Pan Joint" type="PinJoint2D" parent="Base/Beam Joint/Beam"]
 position = Vector2(286, 9)
 node_a = NodePath("..")

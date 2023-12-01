@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://qglfgr0d6jek"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_ggvvj"]
+
+[resource]
+script = ExtResource("1_ggvvj")
+customer_id = 0
+punishment = 2
+dialogue = Array[String](["Scaler, the meat was not enough even for one dinner! It has cost me a lot of gold and you have lied to me together with the hunter.", "The King will hear about this."])
+is_task = false
+answer = false
+task_item = ""
+task_item_units = 0.0
+reward_item = ""
+success_dialogue = Array[String]([])
+fail_dialogue = Array[String]([])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0

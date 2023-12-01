@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Job" load_steps=2 format=3 uid="uid://w481gijtch5i"]
+
+[ext_resource type="Script" path="res://jobs/job_resource.gd" id="1_ejuy0"]
+
+[resource]
+script = ExtResource("1_ejuy0")
+customer_id = 4
+punishment = 0
+dialogue = Array[String](["I, King Hiero II, have come with my army to capture and imprison you for defrauding people of this town.", "You will be executed for your crimes. Come peacefully, or your fate will be far worse!"])
+is_task = false
+answer = false
+task_item = ""
+task_item_units = 0.0
+reward_item = ""
+success_dialogue = Array[String]([])
+fail_dialogue = Array[String]([])
+on_sucess_id = ""
+on_sucess_pos = 0
+on_fail_id = ""
+on_fail_pos = 0
+is_ending = true
+ending_id = 3
