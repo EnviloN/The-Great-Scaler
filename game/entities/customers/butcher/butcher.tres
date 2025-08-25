@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=11 format=3 uid="uid://d13dfkwruashr"]
+
+[ext_resource type="Script" uid="uid://bghws3g8hmyru" path="res://entities/customers/customer.gd" id="1_nnc1n"]
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="2_5w3i8"]
+[ext_resource type="Resource" uid="uid://dsfj1ubrlxks7" path="res://entities/customers/butcher/visual/default_butcher.tres" id="2_xrj38"]
+[ext_resource type="AudioStream" uid="uid://dalvkap6i60ir" path="res://entities/customers/butcher/voice/1.mp3" id="5_spne1"]
+[ext_resource type="AudioStream" uid="uid://db2q0mmb8bnbx" path="res://entities/customers/butcher/voice/2.mp3" id="6_n1aja"]
+[ext_resource type="AudioStream" uid="uid://80ytqhbyucd7" path="res://entities/customers/butcher/voice/3.mp3" id="7_v7dme"]
+[ext_resource type="AudioStream" uid="uid://bpt56r2ed7jrh" path="res://entities/customers/butcher/voice/4.mp3" id="8_j8y1l"]
+[ext_resource type="AudioStream" uid="uid://073rg2a1j3eb" path="res://entities/customers/butcher/voice/5.mp3" id="9_vrkmt"]
+[ext_resource type="AudioStream" uid="uid://bam2vpwhfrbrf" path="res://entities/customers/butcher/voice/6.mp3" id="10_a4iea"]
+[ext_resource type="AudioStream" uid="uid://dhbtbvel1ts43" path="res://entities/customers/butcher/voice/7.mp3" id="11_aeqru"]
+
+[resource]
+script = ExtResource("1_nnc1n")
+customer_name = 2
+default_variant = ExtResource("2_xrj38")
+additional_variants = Dictionary[String, ExtResource("2_5w3i8")]({})
+voices = Array[AudioStream]([ExtResource("5_spne1"), ExtResource("6_n1aja"), ExtResource("7_v7dme"), ExtResource("8_j8y1l"), ExtResource("9_vrkmt"), ExtResource("10_a4iea"), ExtResource("11_aeqru")])
+metadata/_custom_type_script = "uid://bghws3g8hmyru"

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CustomerVisualVariant" load_steps=4 format=3 uid="uid://c50ak3hdp5foo"]
+
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="1_1ymrm"]
+[ext_resource type="Texture2D" uid="uid://bbf081iyamv3j" path="res://entities/customers/elder/visual/elder_body.PNG" id="1_58yj8"]
+[ext_resource type="Texture2D" uid="uid://deut8n6jbkcrn" path="res://entities/customers/elder/visual/elder_head.PNG" id="2_q3oqr"]
+
+[resource]
+script = ExtResource("1_1ymrm")
+head = ExtResource("2_q3oqr")
+body = ExtResource("1_58yj8")
+metadata/_custom_type_script = "uid://dhije21n6gc63"

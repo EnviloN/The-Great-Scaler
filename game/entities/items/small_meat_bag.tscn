@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvsmnq0j16xgs"]
+
+[ext_resource type="Texture2D" uid="uid://y6csqah3e681" path="res://entities/items/visual/small_meat_bag.PNG" id="1_s8vjc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbxur"]
+radius = 39.0
+
+[node name="Small meat bag" type="RigidBody2D"]
+z_index = 24
+z_as_relative = false
+collision_layer = 2050
+collision_mask = 3221225477
+mass = 0.8
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_s8vjc")
+region_rect = Rect2(41, 13, 34, 55)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 15)
+shape = SubResource("CircleShape2D_bbxur")

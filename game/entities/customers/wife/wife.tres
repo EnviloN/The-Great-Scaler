@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=12 format=3 uid="uid://bhnvg20sy8jgb"]
+
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="1_iuc7g"]
+[ext_resource type="AudioStream" uid="uid://vubll3uiohe3" path="res://entities/customers/wife/voice/1.mp3" id="2_r7j6g"]
+[ext_resource type="Resource" uid="uid://cgwxk2pbt4cf7" path="res://entities/customers/wife/visual/default_wife.tres" id="2_wy32w"]
+[ext_resource type="Script" uid="uid://bghws3g8hmyru" path="res://entities/customers/customer.gd" id="3_hfj1h"]
+[ext_resource type="AudioStream" uid="uid://c1hhn6eh2wsfm" path="res://entities/customers/wife/voice/2.mp3" id="3_iuc7g"]
+[ext_resource type="AudioStream" uid="uid://cj2o8k8pui8ej" path="res://entities/customers/wife/voice/3.mp3" id="4_wy32w"]
+[ext_resource type="AudioStream" uid="uid://b4axvfg3qvx4j" path="res://entities/customers/wife/voice/4.mp3" id="5_hfj1h"]
+[ext_resource type="AudioStream" uid="uid://cvpr3a8j5ken4" path="res://entities/customers/wife/voice/5.mp3" id="6_kdqc0"]
+[ext_resource type="AudioStream" uid="uid://bdpnub6ypc0v0" path="res://entities/customers/wife/voice/6.mp3" id="7_ykv2o"]
+[ext_resource type="AudioStream" uid="uid://b3yi4re5arwv3" path="res://entities/customers/wife/voice/7.mp3" id="8_s1ytc"]
+[ext_resource type="AudioStream" uid="uid://bmw7mqf0yjutj" path="res://entities/customers/wife/voice/8.mp3" id="9_mvp1w"]
+
+[resource]
+script = ExtResource("3_hfj1h")
+customer_name = 0
+default_variant = ExtResource("2_wy32w")
+additional_variants = Dictionary[String, ExtResource("1_iuc7g")]({})
+voices = Array[AudioStream]([ExtResource("2_r7j6g"), ExtResource("3_iuc7g"), ExtResource("4_wy32w"), ExtResource("5_hfj1h"), ExtResource("6_kdqc0"), ExtResource("7_ykv2o"), ExtResource("8_s1ytc"), ExtResource("9_mvp1w")])

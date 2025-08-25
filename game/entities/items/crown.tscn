@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjchyrkps8he3"]
+
+[ext_resource type="Texture2D" uid="uid://ralkhyhmmka6" path="res://entities/items/visual/crown.PNG" id="1_b5uy1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2or2m"]
+size = Vector2(180, 112)
+
+[node name="Crown" type="RigidBody2D"]
+z_index = 24
+z_as_relative = false
+collision_layer = 2050
+collision_mask = 3221225477
+mass = 0.8
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_b5uy1")
+region_rect = Rect2(41, 13, 34, 55)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2or2m")

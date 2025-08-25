@@ -10,21 +10,20 @@ config_version=5
 
 [application]
 
-config/name="Game Off 2023"
-run/main_scene="res://scenes/areas/shop.tscn"
-config/features=PackedStringArray("4.1", "GL Compatibility")
-config/icon="res://icon.svg"
+config/name="The Great Scaler"
+run/main_scene="res://areas/shop.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [autoload]
 
-SignalBus="*res://singletons/signal_bus.gd"
-Constants="*res://singletons/constants.gd"
+SignalBus="*res://scripts/signal_bus.gd"
+Constants="*res://scripts/constants.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

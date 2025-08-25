@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="CustomerVisualVariant" load_steps=4 format=3 uid="uid://cbp63rl70e6yb"]
+
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="1_ntavx"]
+[ext_resource type="Texture2D" uid="uid://c1njr5ncjwr4x" path="res://entities/customers/king/visual/bad_king/bad_king_body.PNG" id="1_sdcnh"]
+[ext_resource type="Texture2D" uid="uid://cnpfqiokcfxxc" path="res://entities/customers/king/visual/bad_king/bad_king_head.PNG" id="2_bn3j8"]
+
+[resource]
+script = ExtResource("1_ntavx")
+variant_name = "bad"
+head = ExtResource("2_bn3j8")
+body = ExtResource("1_sdcnh")
+metadata/_custom_type_script = "uid://dhije21n6gc63"

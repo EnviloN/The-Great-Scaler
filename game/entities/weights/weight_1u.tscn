@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwmgr80m1xcsn"]
+
+[ext_resource type="Texture2D" uid="uid://c0avnj54s0j6c" path="res://entities/weights/visual/1u Merged.PNG" id="1_i0k4v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc0sk"]
+size = Vector2(62.023, 79)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e6tll"]
+radius = 12.0187
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vq5q6"]
+radius = 11.9885
+
+[node name="Weight 1u" type="RigidBody2D"]
+z_index = 26
+z_as_relative = false
+collision_layer = 2
+collision_mask = 2147483653
+mass = 0.8
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.0114994, 38)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_i0k4v")
+region_rect = Rect2(77, 24, 26, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0114994, 49.5)
+shape = SubResource("RectangleShape2D_nc0sk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0.0229988, 0)
+shape = SubResource("CircleShape2D_e6tll")
+
+[node name="Grab Area" type="Area2D" parent="."]
+position = Vector2(0.0114994, 56.0175)
+collision_layer = 256
+collision_mask = 257
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grab Area"]
+position = Vector2(0, -56)
+shape = SubResource("CircleShape2D_vq5q6")

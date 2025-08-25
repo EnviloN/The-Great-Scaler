@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Customer" load_steps=14 format=3 uid="uid://b87l7ae0c73u0"]
+
+[ext_resource type="Script" uid="uid://bghws3g8hmyru" path="res://entities/customers/customer.gd" id="1_531iq"]
+[ext_resource type="Resource" uid="uid://cttg0idp7wwsp" path="res://entities/customers/king/visual/good_king/good_king.tres" id="2_jlpx3"]
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="2_r6gm5"]
+[ext_resource type="Resource" uid="uid://cbp63rl70e6yb" path="res://entities/customers/king/visual/bad_king/bad_king.tres" id="3_kq1jr"]
+[ext_resource type="Resource" uid="uid://by0kyeo85tmou" path="res://entities/customers/king/visual/secret_king/secret_king.tres" id="3_lkc50"]
+[ext_resource type="AudioStream" uid="uid://62afx0nmtruk" path="res://entities/customers/king/voice/1.mp3" id="5_kq1jr"]
+[ext_resource type="AudioStream" uid="uid://66mbtuyd38bd" path="res://entities/customers/king/voice/2.mp3" id="6_6tb5y"]
+[ext_resource type="AudioStream" uid="uid://dcwy34dxq2r52" path="res://entities/customers/king/voice/3.mp3" id="7_wbma0"]
+[ext_resource type="AudioStream" uid="uid://drl5ug4nokjch" path="res://entities/customers/king/voice/4.mp3" id="8_bx245"]
+[ext_resource type="AudioStream" uid="uid://dehkwsdrylm5k" path="res://entities/customers/king/voice/5.mp3" id="9_l4v4q"]
+[ext_resource type="AudioStream" uid="uid://bpi0jx1uu6atq" path="res://entities/customers/king/voice/6.mp3" id="10_pk253"]
+[ext_resource type="AudioStream" uid="uid://4tumt13lrbw6" path="res://entities/customers/king/voice/7.mp3" id="11_gspgo"]
+[ext_resource type="AudioStream" uid="uid://xqi2pndr8ieu" path="res://entities/customers/king/voice/8.mp3" id="12_jjm14"]
+
+[resource]
+script = ExtResource("1_531iq")
+customer_name = 4
+default_variant = ExtResource("3_lkc50")
+additional_variants = Dictionary[String, ExtResource("2_r6gm5")]({
+"bad": ExtResource("3_kq1jr"),
+"good": ExtResource("2_jlpx3")
+})
+voices = Array[AudioStream]([ExtResource("5_kq1jr"), ExtResource("6_6tb5y"), ExtResource("7_wbma0"), ExtResource("8_bx245"), ExtResource("9_l4v4q"), ExtResource("10_pk253"), ExtResource("11_gspgo"), ExtResource("12_jjm14")])
+metadata/_custom_type_script = "uid://bghws3g8hmyru"

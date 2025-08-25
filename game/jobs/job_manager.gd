@@ -20,16 +20,16 @@ var jobs_done: int = 0
 var task_item: RigidBody2D = null
 var item_parent: Node2D
 var items: Dictionary = {
-	"placeholder": preload("res://scenes/objects/job_items/placeholder.tscn"),
-	"bag_of_salt": preload("res://scenes/objects/job_items/bag_of_salt.tscn"),
-	"bag_of_pepper": preload("res://scenes/objects/job_items/bag_of_pepper.tscn"),
-	"meat_bag": preload("res://scenes/objects/job_items/meat_bag.tscn"),
-	"small_meat_bag": preload("res://scenes/objects/job_items/small_meat_bag.tscn"),
-	"copper_ingot": preload("res://scenes/objects/job_items/copper_ingot.tscn"),
-	"iron_ingot": preload("res://scenes/objects/job_items/iron_ingot.tscn"),
-	"crown": preload("res://scenes/objects/job_items/crown.tscn"),
-	"weight_175u_faul": preload("res://scenes/objects/weights/weight_175u_faul.tscn"),
-	"weight_1u": preload("res://scenes/objects/weights/weight_1u.tscn"),
+	"placeholder": preload("res://entities/items/placeholder.tscn"),
+	"bag_of_salt": preload("res://entities/items/bag_of_salt.tscn"),
+	"bag_of_pepper": preload("res://entities/items/bag_of_pepper.tscn"),
+	"meat_bag": preload("res://entities/items/meat_bag.tscn"),
+	"small_meat_bag": preload("res://entities/items/small_meat_bag.tscn"),
+	"copper_ingot": preload("res://entities/items/copper_ingot.tscn"),
+	"iron_ingot": preload("res://entities/items/iron_ingot.tscn"),
+	"crown": preload("res://entities/items/crown.tscn"),
+	"weight_175u_faul": preload("res://entities/weights/weight_175u_faul.tscn"),
+	"weight_1u": preload("res://entities/weights/weight_1u.tscn"),
 }
 
 func _ready():
@@ -40,10 +40,10 @@ func start_next_job():
 	assert(is_job_available())
 	current = buffer.pop_front() as Job
 	state = JobState.INIT
-	
+
 	if current.punishment > 0:
 		game_manager.punish_player(current.punishment)
-	dialogue_player.set_dialogue_text(current.dialogue) 
+	dialogue_player.set_dialogue_text(current.dialogue)
 	customer_manager.set_customer_sprite(current.customer_id)
 	if not current.is_task: state = JobState.FINISH
 	_spawn_item()
@@ -51,7 +51,7 @@ func start_next_job():
 
 func is_job_available():
 	return len(buffer) >= 1
-	
+
 func is_waiting():
 	return state == JobState.WAITING
 
@@ -76,7 +76,7 @@ func on_finish_job(answer: bool):
 				else:
 					buffer.insert(current.on_sucess_pos, next_job)
 	else:
-		dialogue_player.set_dialogue_text(current.fail_dialogue) 
+		dialogue_player.set_dialogue_text(current.fail_dialogue)
 		if current.reward_item != "":
 			current.reward_item = ""
 		if current.on_fail_id != "":
@@ -85,12 +85,12 @@ func on_finish_job(answer: bool):
 				buffer.push_back(next_job)
 			else:
 				buffer.insert(current.on_fail_pos, next_job)
-				
+
 	_despawn_item()
 	state = JobState.FINISH
 	customer_manager.start_talking()
 	dialogue_player.hide_buttons()
-	
+
 func finalize_job_queue():
 	if game_manager.punishments >= 3:
 		var next_job = _load_job_id("203")
@@ -101,17 +101,17 @@ func finalize_job_queue():
 
 func _load_job_id(job_id: String):
 	return load("res://jobs/{id}.tres".format({"id": job_id})) as Job
-	
+
 func _spawn_item():
 	if current.is_task and current.task_item != "":
 		task_item = items[current.task_item].instantiate() as RigidBody2D
 		task_item.mass = current.task_item_units * Constants.units_to_kg
 		item_parent.add_child(task_item)
-		
+
 func _despawn_item():
 	if task_item != null:
 		task_item.free()  # Will also set task_item = null
-		
+
 func _spawn_reward():
 	if current.reward_item != "":
 		var item = items[current.reward_item].instantiate() as RigidBody2D

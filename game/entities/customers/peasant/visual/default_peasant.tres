@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CustomerVisualVariant" load_steps=4 format=3 uid="uid://e4pbcb3xenk0"]
+
+[ext_resource type="Texture2D" uid="uid://cemuefkftcaqk" path="res://entities/customers/peasant/visual/peasant_body.PNG" id="1_84gk7"]
+[ext_resource type="Script" uid="uid://dhije21n6gc63" path="res://entities/customers/customer_visual_variant.gd" id="1_u3ixx"]
+[ext_resource type="Texture2D" uid="uid://013n7q4782a0" path="res://entities/customers/peasant/visual/peasant_head.PNG" id="2_2b1dd"]
+
+[resource]
+script = ExtResource("1_u3ixx")
+head = ExtResource("2_2b1dd")
+body = ExtResource("1_84gk7")
+metadata/_custom_type_script = "uid://dhije21n6gc63"

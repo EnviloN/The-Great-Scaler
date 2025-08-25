@@ -1,0 +1,168 @@
+[gd_scene load_steps=15 format=3 uid="uid://c83vvqktetfho"]
+
+[ext_resource type="Script" uid="uid://bat7nvmoii3q8" path="res://entities/customers/customer_manager.gd" id="1_0biga"]
+[ext_resource type="Script" uid="uid://bghws3g8hmyru" path="res://entities/customers/customer.gd" id="2_g7f7a"]
+[ext_resource type="Texture2D" uid="uid://cemuefkftcaqk" path="res://entities/customers/peasant/visual/peasant_body.PNG" id="2_nqu71"]
+[ext_resource type="Resource" uid="uid://bhnvg20sy8jgb" path="res://entities/customers/wife/wife.tres" id="3_816hw"]
+[ext_resource type="Texture2D" uid="uid://013n7q4782a0" path="res://entities/customers/peasant/visual/peasant_head.PNG" id="3_x50kf"]
+[ext_resource type="Resource" uid="uid://dfyrmsf8u6tv6" path="res://entities/customers/peasant/paesant.tres" id="4_qfcou"]
+[ext_resource type="Resource" uid="uid://d13dfkwruashr" path="res://entities/customers/butcher/butcher.tres" id="5_117qj"]
+[ext_resource type="Resource" uid="uid://bqc505xwryg63" path="res://entities/customers/elder/elder.tres" id="6_o6ep1"]
+[ext_resource type="Resource" uid="uid://b87l7ae0c73u0" path="res://entities/customers/king/king.tres" id="7_l8osc"]
+
+[sub_resource type="Animation" id="Animation_2kww5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.667, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_v1fej"]
+resource_name = "enter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(-1600, -0.25, 0, 0.1, 378, 5, -0.25, 0, 0.0596904, 5, 0, -0.14031, -11, 0.25, 0),
+"times": PackedFloat32Array(0, 0.7, 1)
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_talking"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.667, 0.667)]
+}
+
+[sub_resource type="Animation" id="Animation_4r8xs"]
+resource_name = "leave"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.1, -1, 0, -0.25, 0, 0.2, -24, 6, -0.1, 0, 0.25, 0, -1600, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.667, -0.25, 0, 0.25, 0, -0.667, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_ts8de"]
+resource_name = "talk"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/head:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(),
+"points": PackedFloat32Array(),
+"times": PackedFloat32Array()
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/head:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.044, -0.25, 0, 0.25, 0, -0.023, -0.25, 0, 0.25, 0, 0.022, -0.25, 0, 0.25, 0, -0.028, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ipifm"]
+_data = {
+&"RESET": SubResource("Animation_2kww5"),
+&"enter": SubResource("Animation_v1fej"),
+&"leave": SubResource("Animation_4r8xs"),
+&"talk": SubResource("Animation_ts8de")
+}
+
+[node name="Customers" type="Node2D"]
+script = ExtResource("1_0biga")
+customers = Dictionary[int, ExtResource("2_g7f7a")]({
+0: ExtResource("3_816hw"),
+1: ExtResource("4_qfcou"),
+2: ExtResource("5_117qj"),
+3: ExtResource("6_o6ep1"),
+4: ExtResource("7_l8osc")
+})
+
+[node name="body" type="Sprite2D" parent="."]
+position = Vector2(0, -116)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("2_nqu71")
+
+[node name="head" type="Sprite2D" parent="body"]
+texture = ExtResource("3_x50kf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ipifm")
+}
